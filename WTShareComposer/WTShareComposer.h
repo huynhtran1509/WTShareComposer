@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 WillowTree Apps, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef WTShareComposer_WTShareComposer_h
+#define WTShareComposer_WTShareComposer_h
 
-@interface WTShareComposer : NSObject
+#import <WTShareComposer/WTShareComposeViewController.h>
 
-@end
+#endif
