@@ -1,5 +1,6 @@
 Based on DETweetComposeViewController
-- Adding Facebook & Foursquare compose support
+- Refactor for generic reuse
+- Add Facebook & Foursquare compose support
 
 ## Credits
 
