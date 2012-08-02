@@ -1,8 +1,7 @@
-## WTShareComposeViewController
+## WTShareComposer
 
 Based on DETweetComposeViewController
 - Refactor for generic reuse
-- Add Facebook & Foursquare compose support
 
 ## Credits
 
