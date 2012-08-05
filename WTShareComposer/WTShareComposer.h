@@ -10,5 +10,6 @@
 #define WTShareComposer_WTShareComposer_h
 
 #import <WTShareComposer/WTShareComposeViewController.h>
+#import <WTShareComposer/WTDefaultTheme.h>
 
 #endif

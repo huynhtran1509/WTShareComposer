@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <WTShareComposer/WTShareTheme.h>
 
-@interface WTTwitterTheme : NSObject <WTShareTheme>
+@interface WTDefaultTheme : NSObject <WTShareTheme>
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 WillowTree Apps, Inc. All rights reserved.
 //
 
-#import "WTTwitterTheme.h"
+#import "WTDefaultTheme.h"
 
-@implementation WTTwitterTheme
+@implementation WTDefaultTheme
 
 - (void)themeButton:(UIButton *)button ofType:(WTShareThemeButtonType)type
 {

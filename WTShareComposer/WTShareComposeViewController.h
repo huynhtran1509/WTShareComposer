@@ -12,6 +12,12 @@
 
 @class WTShareComposeViewController;
 
+@interface UIViewController (WTShareComposeViewControllerPresentation)
+
+- (void)presentModalShareComposeViewControllerAnimated:(WTShareComposeViewController *)viewController;
+
+@end
+
 enum WTShareComposeViewControllerResult
 {
     WTShareComposeViewControllerResultCancelled,

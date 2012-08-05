@@ -80,6 +80,14 @@
 		B6DEB61914631499009FD33C /* DETweetCardHeaderLine.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61714631499009FD33C /* DETweetCardHeaderLine.png */; };
 		B6DEB61A14631499009FD33C /* DETweetCardHeaderLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61814631499009FD33C /* DETweetCardHeaderLine@2x.png */; };
 		B6FD55AD1463A6E100739469 /* DETweetTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FD55AC1463A6E100739469 /* DETweetTextView.m */; };
+		BD1C8D3D15CED53700686EB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13117145768DB00500180 /* UIKit.framework */; };
+		BD1C8D3E15CED53700686EB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13119145768DB00500180 /* Foundation.framework */; };
+		BD1C8D3F15CED53700686EB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A1311B145768DB00500180 /* CoreGraphics.framework */; };
+		BD1C8D4515CED53700686EB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD1C8D4315CED53700686EB3 /* InfoPlist.strings */; };
+		BD1C8D4715CED53700686EB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1C8D4615CED53700686EB3 /* main.m */; };
+		BD1C8D4B15CED53700686EB3 /* WTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1C8D4A15CED53700686EB3 /* WTAppDelegate.m */; };
+		BD1C8D5215CED5D800686EB3 /* WTComposerListController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1C8D5115CED5D800686EB3 /* WTComposerListController.m */; };
+		BD1C8D5315CEDCB500686EB3 /* libWTShareComposer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD302AF715CB16F400E5558A /* libWTShareComposer.a */; };
 		BD302AF815CB16F400E5558A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13119145768DB00500180 /* Foundation.framework */; };
 		BD302B0715CB16F400E5558A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD302B0615CB16F400E5558A /* SenTestingKit.framework */; };
 		BD302B0815CB16F500E5558A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13117145768DB00500180 /* UIKit.framework */; };
@@ -88,14 +96,16 @@
 		BD302B1215CB16F500E5558A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD302B1015CB16F500E5558A /* InfoPlist.strings */; };
 		BD302B1515CB16F500E5558A /* WTShareComposerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B1415CB16F500E5558A /* WTShareComposerTests.m */; };
 		BD302B1E15CB189B00E5558A /* WTShareComposer.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B1C15CB188600E5558A /* WTShareComposer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD302B2115CB18CC00E5558A /* WTShareComposeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B1F15CB18CC00E5558A /* WTShareComposeViewController.h */; };
+		BD302B2115CB18CC00E5558A /* WTShareComposeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B1F15CB18CC00E5558A /* WTShareComposeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD302B2215CB18CC00E5558A /* WTShareComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B2015CB18CC00E5558A /* WTShareComposeViewController.m */; };
-		BD302B2415CB226300E5558A /* WTShareService.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2315CB226300E5558A /* WTShareService.h */; };
+		BD302B2415CB226300E5558A /* WTShareService.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2315CB226300E5558A /* WTShareService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD302B2715CB26B500E5558A /* WTShareComposeView.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2515CB26B500E5558A /* WTShareComposeView.h */; };
 		BD302B2815CB26B500E5558A /* WTShareComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B2615CB26B500E5558A /* WTShareComposeView.m */; };
 		BD302B2E15CB278B00E5558A /* WTShareTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2D15CB278B00E5558A /* WTShareTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD302B3115CB2AB200E5558A /* WTTwitterTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2F15CB2AB200E5558A /* WTTwitterTheme.h */; };
-		BD302B3215CB2AB200E5558A /* WTTwitterTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B3015CB2AB200E5558A /* WTTwitterTheme.m */; };
+		BD302B3115CB2AB200E5558A /* WTDefaultTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD302B3215CB2AB200E5558A /* WTDefaultTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */; };
+		BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */; };
+		BDFE95FC15CEF4BC00D52C28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13117145768DB00500180 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +241,15 @@
 		B6DEB61814631499009FD33C /* DETweetCardHeaderLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DETweetCardHeaderLine@2x.png"; path = "DETweetComposeViewController/Resources/DETweetCardHeaderLine@2x.png"; sourceTree = SOURCE_ROOT; };
 		B6FD55AB1463A6E100739469 /* DETweetTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DETweetTextView.h; path = DETweetComposeViewController/DETweetTextView.h; sourceTree = SOURCE_ROOT; };
 		B6FD55AC1463A6E100739469 /* DETweetTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DETweetTextView.m; path = DETweetComposeViewController/DETweetTextView.m; sourceTree = SOURCE_ROOT; };
+		BD1C8D3B15CED53700686EB3 /* ComposerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1C8D4215CED53700686EB3 /* ComposerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ComposerDemo-Info.plist"; sourceTree = "<group>"; };
+		BD1C8D4415CED53700686EB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BD1C8D4615CED53700686EB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BD1C8D4815CED53700686EB3 /* ComposerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComposerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		BD1C8D4915CED53700686EB3 /* WTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAppDelegate.h; sourceTree = "<group>"; };
+		BD1C8D4A15CED53700686EB3 /* WTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAppDelegate.m; sourceTree = "<group>"; };
+		BD1C8D5015CED5D800686EB3 /* WTComposerListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTComposerListController.h; sourceTree = "<group>"; };
+		BD1C8D5115CED5D800686EB3 /* WTComposerListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTComposerListController.m; sourceTree = "<group>"; };
 		BD302AF715CB16F400E5558A /* libWTShareComposer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWTShareComposer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD302AFB15CB16F400E5558A /* WTShareComposer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTShareComposer-Prefix.pch"; sourceTree = "<group>"; };
 		BD302B0515CB16F400E5558A /* WTShareComposerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTShareComposerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,8 +265,10 @@
 		BD302B2515CB26B500E5558A /* WTShareComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTShareComposeView.h; sourceTree = "<group>"; };
 		BD302B2615CB26B500E5558A /* WTShareComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTShareComposeView.m; sourceTree = "<group>"; };
 		BD302B2D15CB278B00E5558A /* WTShareTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTShareTheme.h; sourceTree = "<group>"; };
-		BD302B2F15CB2AB200E5558A /* WTTwitterTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTwitterTheme.h; sourceTree = "<group>"; };
-		BD302B3015CB2AB200E5558A /* WTTwitterTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTwitterTheme.m; sourceTree = "<group>"; };
+		BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDefaultTheme.h; sourceTree = "<group>"; };
+		BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDefaultTheme.m; sourceTree = "<group>"; };
+		BDFE95F915CEE2A200D52C28 /* WTFacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFacebookService.h; sourceTree = "<group>"; };
+		BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFacebookService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,11 +288,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD1C8D3815CED53700686EB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1C8D5315CEDCB500686EB3 /* libWTShareComposer.a in Frameworks */,
+				BD1C8D3D15CED53700686EB3 /* UIKit.framework in Frameworks */,
+				BD1C8D3E15CED53700686EB3 /* Foundation.framework in Frameworks */,
+				BD1C8D3F15CED53700686EB3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD302AF415CB16F400E5558A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD302AF815CB16F400E5558A /* Foundation.framework in Frameworks */,
+				BDFE95FC15CEF4BC00D52C28 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +426,7 @@
 				B6A131371457690300500180 /* DETweetComposeViewController */,
 				BD302AF915CB16F400E5558A /* WTShareComposer */,
 				BD302B0D15CB16F500E5558A /* WTShareComposerTests */,
+				BD1C8D4015CED53700686EB3 /* ComposerDemo */,
 				B6A13116145768DB00500180 /* Frameworks */,
 				B6A13114145768DB00500180 /* Products */,
 			);
@@ -404,6 +438,7 @@
 				B6A13113145768DB00500180 /* DETweeter.app */,
 				BD302AF715CB16F400E5558A /* libWTShareComposer.a */,
 				BD302B0515CB16F400E5558A /* WTShareComposerTests.octest */,
+				BD1C8D3B15CED53700686EB3 /* ComposerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -519,6 +554,31 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		BD1C8D4015CED53700686EB3 /* ComposerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BD1C8D4915CED53700686EB3 /* WTAppDelegate.h */,
+				BD1C8D4A15CED53700686EB3 /* WTAppDelegate.m */,
+				BD1C8D5015CED5D800686EB3 /* WTComposerListController.h */,
+				BD1C8D5115CED5D800686EB3 /* WTComposerListController.m */,
+				BDFE95F915CEE2A200D52C28 /* WTFacebookService.h */,
+				BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */,
+				BD1C8D4115CED53700686EB3 /* Supporting Files */,
+			);
+			path = ComposerDemo;
+			sourceTree = "<group>";
+		};
+		BD1C8D4115CED53700686EB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD1C8D4215CED53700686EB3 /* ComposerDemo-Info.plist */,
+				BD1C8D4315CED53700686EB3 /* InfoPlist.strings */,
+				BD1C8D4615CED53700686EB3 /* main.m */,
+				BD1C8D4815CED53700686EB3 /* ComposerDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BD302AF915CB16F400E5558A /* WTShareComposer */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,8 +623,8 @@
 			isa = PBXGroup;
 			children = (
 				BD302B2D15CB278B00E5558A /* WTShareTheme.h */,
-				BD302B2F15CB2AB200E5558A /* WTTwitterTheme.h */,
-				BD302B3015CB2AB200E5558A /* WTTwitterTheme.m */,
+				BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */,
+				BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -607,7 +667,7 @@
 				BD302B2415CB226300E5558A /* WTShareService.h in Headers */,
 				BD302B2715CB26B500E5558A /* WTShareComposeView.h in Headers */,
 				BD302B2E15CB278B00E5558A /* WTShareTheme.h in Headers */,
-				BD302B3115CB2AB200E5558A /* WTTwitterTheme.h in Headers */,
+				BD302B3115CB2AB200E5558A /* WTDefaultTheme.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +689,23 @@
 			name = DETweeter;
 			productName = DETweeter;
 			productReference = B6A13113145768DB00500180 /* DETweeter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BD1C8D3A15CED53700686EB3 /* ComposerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD1C8D4E15CED53700686EB3 /* Build configuration list for PBXNativeTarget "ComposerDemo" */;
+			buildPhases = (
+				BD1C8D3715CED53700686EB3 /* Sources */,
+				BD1C8D3815CED53700686EB3 /* Frameworks */,
+				BD1C8D3915CED53700686EB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComposerDemo;
+			productName = ComposerDemo;
+			productReference = BD1C8D3B15CED53700686EB3 /* ComposerDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BD302AF615CB16F400E5558A /* WTShareComposer */ = {
@@ -693,6 +770,7 @@
 				B6A13112145768DB00500180 /* DETweeter */,
 				BD302AF615CB16F400E5558A /* WTShareComposer */,
 				BD302B0415CB16F400E5558A /* WTShareComposerTests */,
+				BD1C8D3A15CED53700686EB3 /* ComposerDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -738,6 +816,14 @@
 				B6634191148D9C8C0026DB14 /* YawkeyCleanTeeth.jpg in Resources */,
 				B61501FA149BFF7000C4A719 /* DETweetCardAccountLine.png in Resources */,
 				B61501FB149BFF7000C4A719 /* DETweetCardAccountLine@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1C8D3915CED53700686EB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1C8D4515CED53700686EB3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,13 +889,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD1C8D3715CED53700686EB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1C8D4715CED53700686EB3 /* main.m in Sources */,
+				BD1C8D4B15CED53700686EB3 /* WTAppDelegate.m in Sources */,
+				BD1C8D5215CED5D800686EB3 /* WTComposerListController.m in Sources */,
+				BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD302AF315CB16F400E5558A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD302B2215CB18CC00E5558A /* WTShareComposeViewController.m in Sources */,
 				BD302B2815CB26B500E5558A /* WTShareComposeView.m in Sources */,
-				BD302B3215CB2AB200E5558A /* WTTwitterTheme.m in Sources */,
+				BD302B3215CB2AB200E5558A /* WTDefaultTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +951,14 @@
 				B6A13130145768DB00500180 /* en */,
 			);
 			name = DEViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		BD1C8D4315CED53700686EB3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD1C8D4415CED53700686EB3 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		BD302B1015CB16F500E5558A /* InfoPlist.strings */ = {
@@ -944,6 +1049,40 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DETweeter/DETweeter-Prefix.pch";
 				INFOPLIST_FILE = "DETweeter/DETweeter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BD1C8D4C15CED53700686EB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComposerDemo/ComposerDemo-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "ComposerDemo/ComposerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BD1C8D4D15CED53700686EB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ComposerDemo/ComposerDemo-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "ComposerDemo/ComposerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1044,6 +1183,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		BD1C8D4E15CED53700686EB3 /* Build configuration list for PBXNativeTarget "ComposerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1C8D4C15CED53700686EB3 /* Debug */,
+				BD1C8D4D15CED53700686EB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BD302B1615CB16F500E5558A /* Build configuration list for PBXNativeTarget "WTShareComposer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1051,6 +1199,7 @@
 				BD302B1815CB16F500E5558A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD302B1915CB16F500E5558A /* Build configuration list for PBXNativeTarget "WTShareComposerTests" */ = {
 			isa = XCConfigurationList;
@@ -1059,6 +1208,7 @@
 				BD302B1B15CB16F500E5558A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
