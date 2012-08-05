@@ -1,14 +1,14 @@
 //
-//  WTFacebookService.m
+//  WTTwitterService.m
 //  WTShareComposer
 //
 //  Created by Joel Garrett on 8/5/12.
 //  Copyright (c) 2012 WillowTree Apps, Inc. All rights reserved.
 //
 
-#import "WTFacebookService.h"
+#import "WTTwitterService.h"
 
-@implementation WTFacebookService
+@implementation WTTwitterService
 
 + (BOOL)canShare
 {
@@ -17,7 +17,7 @@
 
 - (NSString *)title
 {
-    return @"Facebook";
+    return @"Twitter";
 }
 
 - (NSUInteger)characterLimit
@@ -29,6 +29,5 @@
 {
     
 }
-
 
 @end

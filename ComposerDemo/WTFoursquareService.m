@@ -1,14 +1,14 @@
 //
-//  WTFacebookService.m
+//  WTFoursquareService.m
 //  WTShareComposer
 //
 //  Created by Joel Garrett on 8/5/12.
 //  Copyright (c) 2012 WillowTree Apps, Inc. All rights reserved.
 //
 
-#import "WTFacebookService.h"
+#import "WTFoursquareService.h"
 
-@implementation WTFacebookService
+@implementation WTFoursquareService
 
 + (BOOL)canShare
 {
@@ -17,7 +17,7 @@
 
 - (NSString *)title
 {
-    return @"Facebook";
+    return @"Foursquare";
 }
 
 - (NSUInteger)characterLimit
@@ -29,6 +29,5 @@
 {
     
 }
-
 
 @end

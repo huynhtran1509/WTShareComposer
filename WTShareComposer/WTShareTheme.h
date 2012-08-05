@@ -22,7 +22,11 @@ typedef enum WTShareThemeLabelType : NSUInteger
 
 @protocol WTShareTheme <NSObject>
 
+- (UIImage *)shareCardBackgroundImage;
+
 - (void)themeButton:(UIButton *)button ofType:(WTShareThemeButtonType)type;
 - (void)themeLabel:(UILabel *)label ofType:(WTShareThemeLabelType)type;
+
+- (void)themeNavigationBar:(UINavigationBar *)navigationBar;
 
 @end

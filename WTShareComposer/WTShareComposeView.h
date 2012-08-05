@@ -10,4 +10,15 @@
 
 @interface WTShareComposeView : UIView
 
+@property (nonatomic, readonly) UINavigationBar *navigationBar;
+@property (nonatomic, readonly) UITextView *textView;
+
+- (id)initWithNavigationItem:(UINavigationItem *)navigationItem;
+
+- (void)showAnimated:(BOOL)animated;
+- (void)showAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
+
+- (void)hideAnimated:(BOOL)animated;
+- (void)hideAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
+
 @end

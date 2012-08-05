@@ -8,7 +8,10 @@
 
 #import "WTComposerListController.h"
 #import <WTShareComposer/WTShareComposeViewController.h>
+
+#import "WTTwitterService.h"
 #import "WTFacebookService.h"
+#import "WTFoursquareService.h"
 
 @interface WTComposerListController ()
 
@@ -65,24 +68,25 @@
 - (WTShareComposeViewController *)shareComposeViewControllerForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WTShareComposeViewController *controller = nil;
-    WTFacebookService *service = [[WTFacebookService alloc] init];
     WTDefaultTheme *theme = [[WTDefaultTheme alloc] init];
     
     switch ((WTComposerDemo)indexPath.row)
     {
         case WTComposerDemoTwitter:
-        {
-            
+        {   
+            WTTwitterService *service = [[WTTwitterService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
             break;
         }
         case WTComposerDemoFacebook:
         {
+            WTFacebookService *service = [[WTFacebookService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
             break;
         }
         case WTComposerDemoFoursquare:
         {
+            WTFoursquareService *service = [[WTFoursquareService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
             break;
         }

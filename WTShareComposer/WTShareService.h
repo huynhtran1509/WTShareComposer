@@ -14,6 +14,7 @@
 // Returns if service is accessible and at least one account has been setup.
 + (BOOL)canShare;
 
+- (NSString *)title;
 - (NSUInteger)characterLimit;
 
 - (void)postText:(NSString *)text withImages:(NSArray *)images;

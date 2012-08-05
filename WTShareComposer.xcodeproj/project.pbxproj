@@ -106,6 +106,28 @@
 		BD302B3215CB2AB200E5558A /* WTDefaultTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */; };
 		BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */; };
 		BDFE95FC15CEF4BC00D52C28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13117145768DB00500180 /* UIKit.framework */; };
+		BDFE95FF15CF083500D52C28 /* WTTwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE95FE15CF083500D52C28 /* WTTwitterService.m */; };
+		BDFE960215CF088600D52C28 /* WTFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE960115CF088600D52C28 /* WTFoursquareService.m */; };
+		BDFE960315CF164F00D52C28 /* DETweetCardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDEE1458C43C00F513E1 /* DETweetCardBackground.png */; };
+		BDFE960415CF164F00D52C28 /* DETweetCardBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDEF1458C43C00F513E1 /* DETweetCardBackground@2x.png */; };
+		BDFE960515CF164F00D52C28 /* DETweetCardHeaderLine.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61714631499009FD33C /* DETweetCardHeaderLine.png */; };
+		BDFE960615CF164F00D52C28 /* DETweetCardHeaderLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61814631499009FD33C /* DETweetCardHeaderLine@2x.png */; };
+		BDFE960715CF164F00D52C28 /* DETweetCardAccountLine.png in Resources */ = {isa = PBXBuildFile; fileRef = B61501F8149BFF7000C4A719 /* DETweetCardAccountLine.png */; };
+		BDFE960815CF164F00D52C28 /* DETweetCardAccountLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B61501F9149BFF7000C4A719 /* DETweetCardAccountLine@2x.png */; };
+		BDFE960915CF164F00D52C28 /* DETweetCancelButtonPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDF01458C43C00F513E1 /* DETweetCancelButtonPortrait.png */; };
+		BDFE960A15CF164F00D52C28 /* DETweetCancelButtonPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDF11458C43C00F513E1 /* DETweetCancelButtonPortrait@2x.png */; };
+		BDFE960B15CF164F00D52C28 /* DETweetCancelButtonLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB60E14630B2E009FD33C /* DETweetCancelButtonLandscape.png */; };
+		BDFE960C15CF164F00D52C28 /* DETweetCancelButtonLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB60F14630B2E009FD33C /* DETweetCancelButtonLandscape@2x.png */; };
+		BDFE960D15CF164F00D52C28 /* DETweetSendButtonPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDF41458C43C00F513E1 /* DETweetSendButtonPortrait.png */; };
+		BDFE960E15CF164F00D52C28 /* DETweetSendButtonPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDF51458C43C00F513E1 /* DETweetSendButtonPortrait@2x.png */; };
+		BDFE960F15CF164F00D52C28 /* DETweetSendButtonLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61014630B2E009FD33C /* DETweetSendButtonLandscape.png */; };
+		BDFE961015CF164F00D52C28 /* DETweetSendButtonLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61114630B2E009FD33C /* DETweetSendButtonLandscape@2x.png */; };
+		BDFE961115CF164F00D52C28 /* DETweetPaperClip.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDF21458C43C00F513E1 /* DETweetPaperClip.png */; };
+		BDFE961215CF164F00D52C28 /* DETweetPaperClip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDF31458C43C00F513E1 /* DETweetPaperClip@2x.png */; };
+		BDFE961315CF164F00D52C28 /* DETweetAttachmentFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDFE1458C5F000F513E1 /* DETweetAttachmentFrame.png */; };
+		BDFE961415CF164F00D52C28 /* DETweetAttachmentFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DDFF1458C5F000F513E1 /* DETweetAttachmentFrame@2x.png */; };
+		BDFE961515CF164F00D52C28 /* DETweetURLAttachment.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DE001458C5F000F513E1 /* DETweetURLAttachment.png */; };
+		BDFE961615CF164F00D52C28 /* DETweetURLAttachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B655DE011458C5F000F513E1 /* DETweetURLAttachment@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +291,10 @@
 		BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDefaultTheme.m; sourceTree = "<group>"; };
 		BDFE95F915CEE2A200D52C28 /* WTFacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFacebookService.h; sourceTree = "<group>"; };
 		BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFacebookService.m; sourceTree = "<group>"; };
+		BDFE95FD15CF083500D52C28 /* WTTwitterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTwitterService.h; sourceTree = "<group>"; };
+		BDFE95FE15CF083500D52C28 /* WTTwitterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTwitterService.m; sourceTree = "<group>"; };
+		BDFE960015CF088500D52C28 /* WTFoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFoursquareService.h; sourceTree = "<group>"; };
+		BDFE960115CF088600D52C28 /* WTFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFoursquareService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +589,10 @@
 				BD1C8D5115CED5D800686EB3 /* WTComposerListController.m */,
 				BDFE95F915CEE2A200D52C28 /* WTFacebookService.h */,
 				BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */,
+				BDFE95FD15CF083500D52C28 /* WTTwitterService.h */,
+				BDFE95FE15CF083500D52C28 /* WTTwitterService.m */,
+				BDFE960015CF088500D52C28 /* WTFoursquareService.h */,
+				BDFE960115CF088600D52C28 /* WTFoursquareService.m */,
 				BD1C8D4115CED53700686EB3 /* Supporting Files */,
 			);
 			path = ComposerDemo;
@@ -824,6 +854,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1C8D4515CED53700686EB3 /* InfoPlist.strings in Resources */,
+				BDFE960315CF164F00D52C28 /* DETweetCardBackground.png in Resources */,
+				BDFE960415CF164F00D52C28 /* DETweetCardBackground@2x.png in Resources */,
+				BDFE960515CF164F00D52C28 /* DETweetCardHeaderLine.png in Resources */,
+				BDFE960615CF164F00D52C28 /* DETweetCardHeaderLine@2x.png in Resources */,
+				BDFE960715CF164F00D52C28 /* DETweetCardAccountLine.png in Resources */,
+				BDFE960815CF164F00D52C28 /* DETweetCardAccountLine@2x.png in Resources */,
+				BDFE960915CF164F00D52C28 /* DETweetCancelButtonPortrait.png in Resources */,
+				BDFE960A15CF164F00D52C28 /* DETweetCancelButtonPortrait@2x.png in Resources */,
+				BDFE960B15CF164F00D52C28 /* DETweetCancelButtonLandscape.png in Resources */,
+				BDFE960C15CF164F00D52C28 /* DETweetCancelButtonLandscape@2x.png in Resources */,
+				BDFE960D15CF164F00D52C28 /* DETweetSendButtonPortrait.png in Resources */,
+				BDFE960E15CF164F00D52C28 /* DETweetSendButtonPortrait@2x.png in Resources */,
+				BDFE960F15CF164F00D52C28 /* DETweetSendButtonLandscape.png in Resources */,
+				BDFE961015CF164F00D52C28 /* DETweetSendButtonLandscape@2x.png in Resources */,
+				BDFE961115CF164F00D52C28 /* DETweetPaperClip.png in Resources */,
+				BDFE961215CF164F00D52C28 /* DETweetPaperClip@2x.png in Resources */,
+				BDFE961315CF164F00D52C28 /* DETweetAttachmentFrame.png in Resources */,
+				BDFE961415CF164F00D52C28 /* DETweetAttachmentFrame@2x.png in Resources */,
+				BDFE961515CF164F00D52C28 /* DETweetURLAttachment.png in Resources */,
+				BDFE961615CF164F00D52C28 /* DETweetURLAttachment@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +947,8 @@
 				BD1C8D4B15CED53700686EB3 /* WTAppDelegate.m in Sources */,
 				BD1C8D5215CED5D800686EB3 /* WTComposerListController.m in Sources */,
 				BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */,
+				BDFE95FF15CF083500D52C28 /* WTTwitterService.m in Sources */,
+				BDFE960215CF088600D52C28 /* WTFoursquareService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
