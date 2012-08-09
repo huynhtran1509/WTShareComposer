@@ -9,6 +9,12 @@
 #import "WTShareComposeView.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface WTShareComposeView () <UITextViewDelegate>
+
+@property UIView *navigationBarShadowView;
+
+@end
+
 @implementation WTShareComposeView
 
 - (id)initWithNavigationItem:(UINavigationItem *)navigationItem
@@ -39,14 +45,33 @@
         self.backgroundColor = [UIColor yellowColor];
         
         _navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 44.0)];
+        [self.navigationBar.layer setMasksToBounds:YES];
         [self addSubview:self.navigationBar];
         
+        self.navigationBarShadowView = [[UIView alloc] initWithFrame:self.navigationBar.frame];
+        [self.navigationBarShadowView setBackgroundColor:[UIColor clearColor]];
+        [self.navigationBarShadowView setClipsToBounds:NO];
+        [self.navigationBarShadowView.layer setMasksToBounds:NO];
+        [self.navigationBarShadowView.layer setShadowPath:[UIBezierPath bezierPathWithRect:self.navigationBarShadowView.bounds].CGPath];
+        [self.navigationBarShadowView.layer setShadowColor:[UIColor colorWithWhite:0.0 alpha:1.0].CGColor];
+        [self.navigationBarShadowView.layer setShadowOffset:CGSizeMake(0.0, 1.0)];
+        [self.navigationBarShadowView.layer setShadowRadius:5.0];
+        [self.navigationBarShadowView.layer setShadowOpacity:0.8];
+        [self.navigationBarShadowView.layer setShouldRasterize:YES];
+        [self.navigationBarShadowView.layer setRasterizationScale:[[UIScreen mainScreen] scale]];
+        [self.navigationBarShadowView setAlpha:0.0];
+        [self insertSubview:self.navigationBarShadowView belowSubview:self.navigationBar];
+        
         _textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(_navigationBar.frame), CGRectGetWidth(frame), CGRectGetHeight(frame) - CGRectGetHeight(_navigationBar.frame))];
-        [self.textView setContentInset:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
+        [self.textView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
+        [self.textView setScrollIndicatorInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
         [self.textView setKeyboardType:UIKeyboardTypeTwitter];
         [self.textView setBackgroundColor:[UIColor clearColor]];
         [self.textView setShowsHorizontalScrollIndicator:NO];
-        [self addSubview:self.textView];
+        [self.textView setAlwaysBounceHorizontal:NO];
+        [self.textView setFont:[UIFont systemFontOfSize:17.0]];
+        [self.textView setDelegate:self];
+        [self insertSubview:self.textView belowSubview:self.navigationBarShadowView];
         
         [self hideAnimated:NO];
     }
@@ -91,13 +116,15 @@
     [self.textView resignFirstResponder];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // Drawing code
+    CGFloat alpha = (scrollView.contentOffset.y * 0.25);
+    
+    if (alpha < 0.0) alpha = 0.0;
+    if (alpha > 1.0) alpha = 1.0;
+    
+    [self.navigationBarShadowView setAlpha:alpha];
 }
-*/
 
 @end

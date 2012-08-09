@@ -63,13 +63,16 @@
     {
         case WTShareThemeButtonTypeCancel:
             [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
             [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [button setTitleShadowColor:[UIColor clearColor] forState:UIControlStateHighlighted];
             [button.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
             break;
             
         case WTShareThemeButtonTypeSend:
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [button setTitleShadowColor:[UIColor grayColor] forState:UIControlStateNormal];
+            [button setTitleShadowColor:[UIColor clearColor] forState:UIControlStateHighlighted];
             [button.titleLabel setShadowOffset:CGSizeMake(0.0, -1.0)];
             break;
             
