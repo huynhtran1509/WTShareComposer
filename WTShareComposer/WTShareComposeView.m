@@ -26,8 +26,8 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    frame.size = CGSizeMake(312.0, 189.0);
-    frame.origin = CGPointMake(4.0, 25.0);
+    frame.size = CGSizeMake(304.0, 189.0);
+    frame.origin = CGPointMake(8.0, 25.0);
     
     self = [super initWithFrame:frame];
     

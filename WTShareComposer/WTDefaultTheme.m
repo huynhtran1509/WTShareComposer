@@ -51,10 +51,31 @@
     }
 }
 
+
 - (void)themeButton:(UIButton *)button ofType:(WTShareThemeButtonType)type
 {
     [button setBackgroundImage:[self portraitImageForButtonOfType:type]
                       forState:UIControlStateNormal];
+    
+    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+    
+    switch (type)
+    {
+        case WTShareThemeButtonTypeCancel:
+            [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [button.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
+            break;
+            
+        case WTShareThemeButtonTypeSend:
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [button setTitleShadowColor:[UIColor grayColor] forState:UIControlStateNormal];
+            [button.titleLabel setShadowOffset:CGSizeMake(0.0, -1.0)];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
