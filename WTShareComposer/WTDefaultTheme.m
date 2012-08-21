@@ -7,6 +7,8 @@
 //
 
 #import "WTDefaultTheme.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @implementation WTDefaultTheme
 
@@ -15,15 +17,15 @@
     return [UIImage imageNamed:@"DETweetCardBackground.png"];
 }
 
-- (UIImage *)portraitImageForButtonOfType:(WTShareThemeButtonType)type
+- (UIImage *)portraitImageForButtonOfType:(WTShareThemeBarButtonItemType)type
 {
     switch (type)
     {
-        case WTShareThemeButtonTypeCancel:
+        case WTShareThemeBarButtonItemTypeCancel:
             return [[UIImage imageNamed:@"DETweetCancelButtonPortrait.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:14];
             break;
         
-        case WTShareThemeButtonTypeSend:
+        case WTShareThemeBarButtonItemTypeSend:
             return [[UIImage imageNamed:@"DETweetSendButtonPortrait.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:14];
             break;
             
@@ -33,15 +35,15 @@
     }
 }
 
-- (UIImage *)landscapeImageForButtonOfType:(WTShareThemeButtonType)type
+- (UIImage *)landscapeImageForButtonOfType:(WTShareThemeBarButtonItemType)type
 {
     switch (type)
     {
-        case WTShareThemeButtonTypeCancel:
+        case WTShareThemeBarButtonItemTypeCancel:
             return [[UIImage imageNamed:@"DETweetCancelButtonLandscape.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:15];
             break;
             
-        case WTShareThemeButtonTypeSend:
+        case WTShareThemeBarButtonItemTypeSend:
             return [[UIImage imageNamed:@"DETweetSendButtonLandscape.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:15];
             break;
             
@@ -52,29 +54,39 @@
 }
 
 
-- (void)themeButton:(UIButton *)button ofType:(WTShareThemeButtonType)type
+- (void)themeBarButtonItem:(UIBarButtonItem *)buttonItem ofType:(WTShareThemeBarButtonItemType)type
 {
-    [button setBackgroundImage:[self portraitImageForButtonOfType:type]
-                      forState:UIControlStateNormal];
+    [buttonItem setBackgroundImage:[self portraitImageForButtonOfType:type]
+                          forState:UIControlStateNormal
+                        barMetrics:UIBarMetricsDefault];
     
-    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+    [buttonItem setBackgroundImage:[self landscapeImageForButtonOfType:type]
+                          forState:UIControlStateNormal
+                        barMetrics:UIBarMetricsLandscapePhone];
     
+      
     switch (type)
     {
-        case WTShareThemeButtonTypeCancel:
-            [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-            [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [button setTitleShadowColor:[UIColor clearColor] forState:UIControlStateHighlighted];
-            [button.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
-            break;
+        case WTShareThemeBarButtonItemTypeCancel:
+        {
+            NSDictionary *attributes = @{
+            UITextAttributeTextColor : [UIColor grayColor],
+            UITextAttributeTextShadowColor : [UIColor whiteColor],
+            UITextAttributeTextShadowOffset : [NSValue valueWithCGSize:CGSizeMake(0.0, 1.0)]
+            };
             
-        case WTShareThemeButtonTypeSend:
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [button setTitleShadowColor:[UIColor grayColor] forState:UIControlStateNormal];
-            [button setTitleShadowColor:[UIColor clearColor] forState:UIControlStateHighlighted];
-            [button.titleLabel setShadowOffset:CGSizeMake(0.0, -1.0)];
+            [buttonItem setTitleTextAttributes:attributes
+                                      forState:UIControlStateNormal];
+            
+            attributes = @{
+            UITextAttributeTextColor : [UIColor whiteColor],
+            UITextAttributeTextShadowColor : [UIColor clearColor],
+            };
+            
+            [buttonItem setTitleTextAttributes:attributes
+                                      forState:UIControlStateHighlighted];
             break;
+        }
             
         default:
             break;
@@ -97,10 +109,31 @@
     NSDictionary *attributes = @{
     UITextAttributeTextColor : [UIColor grayColor],
     UITextAttributeTextShadowColor : [UIColor whiteColor],
-    UITextAttributeTextShadowOffset : [NSValue valueWithCGSize:CGSizeMake(1.0, -1.0)]
+    UITextAttributeTextShadowOffset : [NSValue valueWithCGSize:CGSizeMake(0.0, -1.0)]
     };
     
     [navigationBar setTitleTextAttributes:attributes];
+}
+
+
+- (void)themeNavigationBarShadowView:(UIImageView *)shadowView
+{   
+    [shadowView setBackgroundColor:[UIColor clearColor]];
+    [shadowView setClipsToBounds:NO];
+    [shadowView.layer setMasksToBounds:NO];
+    [shadowView.layer setShadowPath:[UIBezierPath bezierPathWithRect:shadowView.bounds].CGPath];
+    [shadowView.layer setShadowColor:[UIColor colorWithWhite:0.0 alpha:1.0].CGColor];
+    [shadowView.layer setShadowOffset:CGSizeMake(0.0, 1.0)];
+    [shadowView.layer setShadowRadius:5.0];
+    [shadowView.layer setShadowOpacity:0.8];
+    [shadowView.layer setShouldRasterize:YES];
+    [shadowView.layer setRasterizationScale:[[UIScreen mainScreen] scale]];
+}
+
+
+- (WTShareThemeDisplayNavigationBarDropShadow)shouldDisplayNavigationBarDropShadow
+{
+    return WTShareThemeDisplayNavigationBarDropShadowAuto;
 }
 
 @end

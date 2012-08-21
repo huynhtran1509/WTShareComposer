@@ -7,22 +7,30 @@
 //
 
 #import "WTShareComposeView.h"
+#import "WTTextView.h"
+#import "WTShareTheme.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface WTShareComposeView () <UITextViewDelegate>
-
-@property UIView *navigationBarShadowView;
+@interface WTShareComposeView ()
 
 @end
 
 @implementation WTShareComposeView
 
-- (id)initWithNavigationItem:(UINavigationItem *)navigationItem
+- (id)initWithNavigationItem:(UINavigationItem *)navigationItem theme:(id)theme
 {
+    NSParameterAssert(theme != nil);
+    
     self = [self initWithFrame:CGRectZero];
     
     if (self)
     {
+        self.theme = theme;
+        [self.theme themeNavigationBarShadowView:self.navigationBarShadowView];
+        
+        if ([self.theme shouldDisplayNavigationBarDropShadow] != WTShareThemeDisplayNavigationBarDropShadowAlways)
+            [self.navigationBarShadowView setAlpha:0.0];
+        
         if (navigationItem)
             [self.navigationBar setItems:@[ navigationItem ]];
     }
@@ -43,26 +51,17 @@
         self.layer.cornerRadius = 10.0;
         self.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor yellowColor];
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         
         _navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 44.0)];
         [self.navigationBar.layer setMasksToBounds:YES];
+        [self.navigationBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
         [self addSubview:self.navigationBar];
         
-        self.navigationBarShadowView = [[UIView alloc] initWithFrame:self.navigationBar.frame];
-        [self.navigationBarShadowView setBackgroundColor:[UIColor clearColor]];
-        [self.navigationBarShadowView setClipsToBounds:NO];
-        [self.navigationBarShadowView.layer setMasksToBounds:NO];
-        [self.navigationBarShadowView.layer setShadowPath:[UIBezierPath bezierPathWithRect:self.navigationBarShadowView.bounds].CGPath];
-        [self.navigationBarShadowView.layer setShadowColor:[UIColor colorWithWhite:0.0 alpha:1.0].CGColor];
-        [self.navigationBarShadowView.layer setShadowOffset:CGSizeMake(0.0, 1.0)];
-        [self.navigationBarShadowView.layer setShadowRadius:5.0];
-        [self.navigationBarShadowView.layer setShadowOpacity:0.8];
-        [self.navigationBarShadowView.layer setShouldRasterize:YES];
-        [self.navigationBarShadowView.layer setRasterizationScale:[[UIScreen mainScreen] scale]];
-        [self.navigationBarShadowView setAlpha:0.0];
+        _navigationBarShadowView = [[UIImageView alloc] initWithFrame:self.navigationBar.frame];
         [self insertSubview:self.navigationBarShadowView belowSubview:self.navigationBar];
         
-        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(_navigationBar.frame), CGRectGetWidth(frame), CGRectGetHeight(frame) - CGRectGetHeight(_navigationBar.frame))];
+        _textView = [[WTTextView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(_navigationBar.frame), CGRectGetWidth(frame), CGRectGetHeight(frame) - CGRectGetHeight(_navigationBar.frame))];
         [self.textView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
         [self.textView setScrollIndicatorInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
         [self.textView setKeyboardType:UIKeyboardTypeTwitter];
@@ -70,8 +69,24 @@
         [self.textView setShowsHorizontalScrollIndicator:NO];
         [self.textView setAlwaysBounceHorizontal:NO];
         [self.textView setFont:[UIFont systemFontOfSize:17.0]];
-        [self.textView setDelegate:self];
         [self insertSubview:self.textView belowSubview:self.navigationBarShadowView];
+        
+        _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 100.0, CGRectGetWidth(frame) * 0.5f, 30.0)];
+        [_locationLabel setBackgroundColor:[UIColor redColor]];
+        
+        CGRect charcter_frame = CGRectZero;
+        charcter_frame.size.height = 30.0f;
+        charcter_frame.size.width = CGRectGetWidth(frame) * 0.4f;
+        charcter_frame.origin.x = CGRectGetWidth(frame) - (CGRectGetWidth(charcter_frame) + 10.0);
+        charcter_frame.origin.y = CGRectGetHeight(frame) - CGRectGetHeight(charcter_frame);
+        
+        _characterCountLabel = [[UILabel alloc] initWithFrame:charcter_frame];
+        [_characterCountLabel setBackgroundColor:[UIColor clearColor]];
+        [_characterCountLabel setFont:[UIFont boldSystemFontOfSize:17.0]];
+        [_characterCountLabel setTextAlignment:UITextAlignmentRight];
+        [_characterCountLabel setTextColor:[UIColor grayColor]];
+        [_characterCountLabel setShadowColor:[UIColor colorWithWhite:0.8 alpha:0.7]];
+        [_characterCountLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
         
         [self hideAnimated:NO];
     }
@@ -117,14 +132,65 @@
 }
 
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)setLocationSupportEnabled:(BOOL)locationSupportEnabled
 {
-    CGFloat alpha = (scrollView.contentOffset.y * 0.25);
+    _locationSupportEnabled = locationSupportEnabled;
     
-    if (alpha < 0.0) alpha = 0.0;
-    if (alpha > 1.0) alpha = 1.0;
+    if (_locationSupportEnabled)
+    {
+        [self addSubview:self.locationLabel];
+    }
     
-    [self.navigationBarShadowView setAlpha:alpha];
+    else
+    {   
+        [self.locationLabel removeFromSuperview];
+    }
+    
+    [self adjustTextViewFrame];
+}
+
+
+- (void)setCharacterCountSupportEnabled:(BOOL)characterCountSupportEnabled
+{
+    _characterCountSupportEnabled = characterCountSupportEnabled;
+    
+    if (_characterCountSupportEnabled)
+    {
+        [self addSubview:self.characterCountLabel];
+    }
+    
+    else
+    {
+        [self.characterCountLabel removeFromSuperview];
+    }
+    
+    [self adjustTextViewFrame];
+}
+
+
+- (void)adjustTextViewFrame
+{
+    CGRect text_frame = CGRectZero;
+    
+    if (![self isCharacterCountSupportEnabled] && ![self isLocationSupportEnabled])
+    {
+        text_frame = CGRectMake(0.0,
+                                CGRectGetMaxY(_navigationBar.frame),
+                                CGRectGetWidth(self.frame),
+                                CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame));
+        
+    }
+    
+    else
+    {
+        text_frame = CGRectMake(0.0,
+                                CGRectGetMaxY(_navigationBar.frame),
+                                CGRectGetWidth(self.frame),
+                                CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) - 30.0f);
+        
+    }
+    
+    [_textView setFrame:text_frame];
 }
 
 @end

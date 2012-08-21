@@ -13,6 +13,10 @@
 #import "WTFacebookService.h"
 #import "WTFoursquareService.h"
 
+#import "WTTwitterTheme.h"
+#import "WTFourSquareTheme.h"
+#import "WTFacebookTheme.h"
+
 @interface WTComposerListController ()
 
 @end
@@ -68,24 +72,26 @@
 - (WTShareComposeViewController *)shareComposeViewControllerForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WTShareComposeViewController *controller = nil;
-    WTDefaultTheme *theme = [[WTDefaultTheme alloc] init];
     
     switch ((WTComposerDemo)indexPath.row)
     {
         case WTComposerDemoTwitter:
-        {   
+        {
+            WTTwitterTheme *theme = [[WTTwitterTheme alloc] init];
             WTTwitterService *service = [[WTTwitterService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
             break;
         }
         case WTComposerDemoFacebook:
         {
+            WTFacebookTheme *theme = [[WTFacebookTheme alloc] init];
             WTFacebookService *service = [[WTFacebookService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
             break;
         }
         case WTComposerDemoFoursquare:
         {
+            WTFourSquareTheme *theme = [[WTFourSquareTheme alloc] init];
             WTFoursquareService *service = [[WTFoursquareService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
             break;

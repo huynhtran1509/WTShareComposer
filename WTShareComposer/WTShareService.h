@@ -15,11 +15,14 @@
 + (BOOL)canShare;
 
 - (NSString *)title;
-- (NSUInteger)characterLimit;
 
 - (void)postText:(NSString *)text withImages:(NSArray *)images;
 
 @optional
+
+- (NSUInteger)imageAttachmentsLimit;
+- (NSUInteger)URLAttachmentsLimit;
+
 - (void)postText:(NSString *)text withImages:(NSArray *)images location:(CLLocation *)location;
 
 @end
@@ -30,5 +33,13 @@
 - (void)postSucceeded:(id<WTShareService>)service;
 - (void)postFailed:(id<WTShareService>)service;
 - (void)postFailedAuthentication:(id<WTShareService>)service;
+
+@end
+
+@protocol WTShareServiceCharacterLimit <WTShareService>
+
+- (NSUInteger)characterLimit;
+- (NSUInteger)characterCountForImages:(NSArray *)images;
+- (NSUInteger)characterCountForURLs:(NSArray *)urls;
 
 @end

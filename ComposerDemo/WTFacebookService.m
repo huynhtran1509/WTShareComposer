@@ -20,15 +20,9 @@
     return @"Facebook";
 }
 
-- (NSUInteger)characterLimit
-{
-    return 0;
-}
-
 - (void)postText:(NSString *)text withImages:(NSArray *)images
 {
     
 }
-
 
 @end

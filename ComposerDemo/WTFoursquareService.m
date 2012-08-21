@@ -20,12 +20,14 @@
     return @"Foursquare";
 }
 
-- (NSUInteger)characterLimit
-{
-    return 0;
-}
 
 - (void)postText:(NSString *)text withImages:(NSArray *)images
+{
+    
+}
+
+
+- (void)postText:(NSString *)text withImages:(NSArray *)images location:(CLLocation *)location
 {
     
 }

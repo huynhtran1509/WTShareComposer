@@ -104,6 +104,16 @@
 		BD302B2E15CB278B00E5558A /* WTShareTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2D15CB278B00E5558A /* WTShareTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD302B3115CB2AB200E5558A /* WTDefaultTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD302B3215CB2AB200E5558A /* WTDefaultTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */; };
+		BD3C05C615D55C0100A5EA4B /* WTFourSquareTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3C05C515D55C0100A5EA4B /* WTFourSquareTheme.m */; };
+		BD3C05CA15D55FFF00A5EA4B /* nav_bg_foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = BD3C05C815D55FFF00A5EA4B /* nav_bg_foursquare.png */; };
+		BD3C05CB15D55FFF00A5EA4B /* nav_bg_foursquare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD3C05C915D55FFF00A5EA4B /* nav_bg_foursquare@2x.png */; };
+		BD3C05CE15D589E100A5EA4B /* WTFacebookTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3C05CD15D589E100A5EA4B /* WTFacebookTheme.m */; };
+		BD56CCF215E3CB27006ECA3E /* WTTwitterTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */; };
+		BDF8D74415D4463200D6FC48 /* WTTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF8D74215D4463200D6FC48 /* WTTextView.h */; };
+		BDF8D74515D4463200D6FC48 /* WTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF8D74315D4463200D6FC48 /* WTTextView.m */; };
+		BDF8D74915D447FB00D6FC48 /* WTRuledView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF8D74715D447FB00D6FC48 /* WTRuledView.h */; };
+		BDF8D74A15D447FB00D6FC48 /* WTRuledView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF8D74815D447FB00D6FC48 /* WTRuledView.m */; };
+		BDF8D74C15D44A0A00D6FC48 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF8D74B15D44A0A00D6FC48 /* QuartzCore.framework */; };
 		BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */; };
 		BDFE95FC15CEF4BC00D52C28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13117145768DB00500180 /* UIKit.framework */; };
 		BDFE95FF15CF083500D52C28 /* WTTwitterService.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFE95FE15CF083500D52C28 /* WTTwitterService.m */; };
@@ -289,6 +299,19 @@
 		BD302B2D15CB278B00E5558A /* WTShareTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTShareTheme.h; sourceTree = "<group>"; };
 		BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDefaultTheme.h; sourceTree = "<group>"; };
 		BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDefaultTheme.m; sourceTree = "<group>"; };
+		BD3C05C415D55C0100A5EA4B /* WTFourSquareTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFourSquareTheme.h; sourceTree = "<group>"; };
+		BD3C05C515D55C0100A5EA4B /* WTFourSquareTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFourSquareTheme.m; sourceTree = "<group>"; };
+		BD3C05C815D55FFF00A5EA4B /* nav_bg_foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg_foursquare.png; sourceTree = "<group>"; };
+		BD3C05C915D55FFF00A5EA4B /* nav_bg_foursquare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg_foursquare@2x.png"; sourceTree = "<group>"; };
+		BD3C05CC15D589E000A5EA4B /* WTFacebookTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFacebookTheme.h; sourceTree = "<group>"; };
+		BD3C05CD15D589E100A5EA4B /* WTFacebookTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFacebookTheme.m; sourceTree = "<group>"; };
+		BD56CCF015E3CB27006ECA3E /* WTTwitterTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTwitterTheme.h; sourceTree = "<group>"; };
+		BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTwitterTheme.m; sourceTree = "<group>"; };
+		BDF8D74215D4463200D6FC48 /* WTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTextView.h; sourceTree = "<group>"; };
+		BDF8D74315D4463200D6FC48 /* WTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTextView.m; sourceTree = "<group>"; };
+		BDF8D74715D447FB00D6FC48 /* WTRuledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRuledView.h; sourceTree = "<group>"; };
+		BDF8D74815D447FB00D6FC48 /* WTRuledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTRuledView.m; sourceTree = "<group>"; };
+		BDF8D74B15D44A0A00D6FC48 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BDFE95F915CEE2A200D52C28 /* WTFacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFacebookService.h; sourceTree = "<group>"; };
 		BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFacebookService.m; sourceTree = "<group>"; };
 		BDFE95FD15CF083500D52C28 /* WTTwitterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTwitterService.h; sourceTree = "<group>"; };
@@ -318,6 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF8D74C15D44A0A00D6FC48 /* QuartzCore.framework in Frameworks */,
 				BD1C8D5315CEDCB500686EB3 /* libWTShareComposer.a in Frameworks */,
 				BD1C8D3D15CED53700686EB3 /* UIKit.framework in Frameworks */,
 				BD1C8D3E15CED53700686EB3 /* Foundation.framework in Frameworks */,
@@ -472,6 +496,7 @@
 		B6A13116145768DB00500180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDF8D74B15D44A0A00D6FC48 /* QuartzCore.framework */,
 				697FE2D9149040AF0045B8C7 /* Accounts.framework */,
 				6925A82F1459105500011DA0 /* libz.dylib */,
 				6925A82D1459104200011DA0 /* MobileCoreServices.framework */,
@@ -591,8 +616,14 @@
 				BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */,
 				BDFE95FD15CF083500D52C28 /* WTTwitterService.h */,
 				BDFE95FE15CF083500D52C28 /* WTTwitterService.m */,
+				BD56CCF015E3CB27006ECA3E /* WTTwitterTheme.h */,
+				BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */,
 				BDFE960015CF088500D52C28 /* WTFoursquareService.h */,
 				BDFE960115CF088600D52C28 /* WTFoursquareService.m */,
+				BD3C05C415D55C0100A5EA4B /* WTFourSquareTheme.h */,
+				BD3C05C515D55C0100A5EA4B /* WTFourSquareTheme.m */,
+				BD3C05CC15D589E000A5EA4B /* WTFacebookTheme.h */,
+				BD3C05CD15D589E100A5EA4B /* WTFacebookTheme.m */,
 				BD1C8D4115CED53700686EB3 /* Supporting Files */,
 			);
 			path = ComposerDemo;
@@ -601,6 +632,8 @@
 		BD1C8D4115CED53700686EB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD3C05C815D55FFF00A5EA4B /* nav_bg_foursquare.png */,
+				BD3C05C915D55FFF00A5EA4B /* nav_bg_foursquare@2x.png */,
 				BD1C8D4215CED53700686EB3 /* ComposerDemo-Info.plist */,
 				BD1C8D4315CED53700686EB3 /* InfoPlist.strings */,
 				BD1C8D4615CED53700686EB3 /* main.m */,
@@ -671,6 +704,10 @@
 		BD302B3515CB2AF400E5558A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BDF8D74715D447FB00D6FC48 /* WTRuledView.h */,
+				BDF8D74815D447FB00D6FC48 /* WTRuledView.m */,
+				BDF8D74215D4463200D6FC48 /* WTTextView.h */,
+				BDF8D74315D4463200D6FC48 /* WTTextView.m */,
 				BD302B2515CB26B500E5558A /* WTShareComposeView.h */,
 				BD302B2615CB26B500E5558A /* WTShareComposeView.m */,
 			);
@@ -698,6 +735,8 @@
 				BD302B2715CB26B500E5558A /* WTShareComposeView.h in Headers */,
 				BD302B2E15CB278B00E5558A /* WTShareTheme.h in Headers */,
 				BD302B3115CB2AB200E5558A /* WTDefaultTheme.h in Headers */,
+				BDF8D74415D4463200D6FC48 /* WTTextView.h in Headers */,
+				BDF8D74915D447FB00D6FC48 /* WTRuledView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +913,8 @@
 				BDFE961415CF164F00D52C28 /* DETweetAttachmentFrame@2x.png in Resources */,
 				BDFE961515CF164F00D52C28 /* DETweetURLAttachment.png in Resources */,
 				BDFE961615CF164F00D52C28 /* DETweetURLAttachment@2x.png in Resources */,
+				BD3C05CA15D55FFF00A5EA4B /* nav_bg_foursquare.png in Resources */,
+				BD3C05CB15D55FFF00A5EA4B /* nav_bg_foursquare@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +990,9 @@
 				BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */,
 				BDFE95FF15CF083500D52C28 /* WTTwitterService.m in Sources */,
 				BDFE960215CF088600D52C28 /* WTFoursquareService.m in Sources */,
+				BD3C05C615D55C0100A5EA4B /* WTFourSquareTheme.m in Sources */,
+				BD3C05CE15D589E100A5EA4B /* WTFacebookTheme.m in Sources */,
+				BD56CCF215E3CB27006ECA3E /* WTTwitterTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +1003,8 @@
 				BD302B2215CB18CC00E5558A /* WTShareComposeViewController.m in Sources */,
 				BD302B2815CB26B500E5558A /* WTShareComposeView.m in Sources */,
 				BD302B3215CB2AB200E5558A /* WTDefaultTheme.m in Sources */,
+				BDF8D74515D4463200D6FC48 /* WTTextView.m in Sources */,
+				BDF8D74A15D447FB00D6FC48 /* WTRuledView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

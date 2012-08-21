@@ -65,6 +65,7 @@ typedef void (^WTShareComposeViewControllerCompletionHandler)(WTShareComposeView
 @property (nonatomic, strong) id <WTShareTheme> theme;
 
 @property (nonatomic, readonly) NSArray *images;
+@property (nonatomic, readonly) NSArray *urls;
 @property (nonatomic, readonly) NSString *text;
 @property (nonatomic, readonly) CLLocation *location;
 

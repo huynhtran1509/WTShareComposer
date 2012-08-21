@@ -8,12 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class WTTextView;
+@protocol WTShareTheme;
+
 @interface WTShareComposeView : UIView
 
 @property (nonatomic, readonly) UINavigationBar *navigationBar;
-@property (nonatomic, readonly) UITextView *textView;
+@property (nonatomic, readonly) WTTextView *textView;
+@property (nonatomic, readonly) UILabel *locationLabel;
+@property (nonatomic, readonly) UILabel *characterCountLabel;
+@property (nonatomic, readonly) UIImageView *navigationBarShadowView;
 
-- (id)initWithNavigationItem:(UINavigationItem *)navigationItem;
+@property (nonatomic, weak) id <WTShareTheme> theme;
+@property (nonatomic, getter = isLocationSupportEnabled) BOOL locationSupportEnabled;
+@property (nonatomic, getter = isCharacterCountSupportEnabled) BOOL characterCountSupportEnabled;
+
+- (id)initWithNavigationItem:(UINavigationItem *)navigationItem theme:(id)theme;
 
 - (void)showAnimated:(BOOL)animated;
 - (void)showAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;

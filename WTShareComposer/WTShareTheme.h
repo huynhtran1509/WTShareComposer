@@ -8,25 +8,34 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum WTShareThemeButtonType : NSUInteger
+typedef enum WTShareThemeBarButtonItemType : NSUInteger
 {
-    WTShareThemeButtonTypeSend,
-    WTShareThemeButtonTypeCancel,
-    WTShareThemeButtonTypeLocation,
-} WTShareThemeButtonType;
+    WTShareThemeBarButtonItemTypeSend,
+    WTShareThemeBarButtonItemTypeCancel,
+    WTShareThemeBarButtonItemTypeLocation,
+} WTShareThemeBarButtonItemType;
 
 typedef enum WTShareThemeLabelType : NSUInteger
 {
     WTShareThemeLabelTypeTitle,
 } WTShareThemeLabelType;
 
+typedef enum WTShareThemeDisplayNavigationBarDropShadow : NSUInteger
+{
+    WTShareThemeDisplayNavigationBarDropShadowNever,
+    WTShareThemeDisplayNavigationBarDropShadowAlways,
+    WTShareThemeDisplayNavigationBarDropShadowAuto,
+} WTShareThemeDisplayNavigationBarDropShadow;
+
 @protocol WTShareTheme <NSObject>
 
 - (UIImage *)shareCardBackgroundImage;
 
-- (void)themeButton:(UIButton *)button ofType:(WTShareThemeButtonType)type;
+- (void)themeBarButtonItem:(UIBarButtonItem *)buttonItem ofType:(WTShareThemeBarButtonItemType)type;
 - (void)themeLabel:(UILabel *)label ofType:(WTShareThemeLabelType)type;
 
 - (void)themeNavigationBar:(UINavigationBar *)navigationBar;
+- (void)themeNavigationBarShadowView:(UIImageView *)shadowView;
+- (WTShareThemeDisplayNavigationBarDropShadow)shouldDisplayNavigationBarDropShadow;
 
 @end

@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WTTwitterService : NSObject <WTShareService>
+@interface WTTwitterService : NSObject <WTShareServiceCharacterLimit>
 
 @end

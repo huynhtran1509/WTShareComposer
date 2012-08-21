@@ -22,7 +22,29 @@
 
 - (NSUInteger)characterLimit
 {
-    return 0;
+    return 140;
+}
+
+- (NSUInteger)imageAttachmentsLimit
+{
+    return 1;
+}
+
+
+- (NSUInteger)URLAttachmentsLimit
+{
+    return 1;
+}
+
+- (NSUInteger)characterCountForURLs:(NSArray *)urls
+{
+    return ([urls count] * 20);
+}
+
+
+- (NSUInteger)characterCountForImages:(NSArray *)images
+{
+    return ([images count] * 20);
 }
 
 - (void)postText:(NSString *)text withImages:(NSArray *)images
