@@ -311,6 +311,7 @@
 		BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTwitterTheme.m; sourceTree = "<group>"; };
 		BD9E685B15E5512800043FEE /* WTThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTThumbnailView.h; sourceTree = "<group>"; };
 		BD9E685C15E5512800043FEE /* WTThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTThumbnailView.m; sourceTree = "<group>"; };
+		BD9E686015E579DF00043FEE /* WTShareComposer.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WTShareComposer.podspec; sourceTree = "<group>"; };
 		BDF8D74215D4463200D6FC48 /* WTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTextView.h; sourceTree = "<group>"; };
 		BDF8D74315D4463200D6FC48 /* WTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTextView.m; sourceTree = "<group>"; };
 		BDF8D74715D447FB00D6FC48 /* WTRuledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRuledView.h; sourceTree = "<group>"; };
@@ -473,6 +474,7 @@
 		B6A13108145768DB00500180 = {
 			isa = PBXGroup;
 			children = (
+				BD9E686015E579DF00043FEE /* WTShareComposer.podspec */,
 				7B821E4A14928C35006FDD64 /* OAuthConsumerCredentials.h */,
 				6980DB8714738CF4002282CB /* README.markdown */,
 				6925A7D214590E6E00011DA0 /* unofficial-twitter-sdk */,
