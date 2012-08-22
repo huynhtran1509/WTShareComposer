@@ -10,4 +10,6 @@
 
 @interface WTFacebookService : NSObject <WTShareService>
 
+@property (nonatomic, weak) id <WTShareServiceDelegate> delegate;
+
 @end

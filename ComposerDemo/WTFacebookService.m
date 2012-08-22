@@ -20,9 +20,9 @@
     return @"Facebook";
 }
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images
+- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls
 {
-    
+    [self.delegate postFailed:self];
 }
 
 @end

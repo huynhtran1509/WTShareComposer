@@ -13,6 +13,12 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+typedef enum WTShareComposeViewAlertTag : NSUInteger
+{
+    WTShareComposeViewControllerNoAccountsAlert = 1,
+    WTShareComposeViewControllerCannotSendAlert
+} WTShareComposeViewAlertTag;
+
 @implementation UIViewController (WTShareComposeViewControllerPresentation)
 
 - (void)presentModalShareComposeViewControllerAnimated:(WTShareComposeViewController *)viewController
@@ -62,6 +68,7 @@
         if (!_theme)
             _theme = [[WTDefaultTheme alloc] init];
         
+        self.service.delegate = self;
         self.title = [self.service title];
         
         UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title")
@@ -96,12 +103,19 @@
     
     _composeView = [[WTShareComposeView alloc] initWithNavigationItem:self.navigationItem theme:self.theme];
     [self.view addSubview:_composeView];
-    [_composeView addAttachment:nil];
+    
+    if ([self attachmentsCount])
+    {
+        [_composeView addAttachments:self.images];
+        
+        for (NSURL *url in self.urls)
+            [_composeView addAttachment:[self.theme URLAttachmentImage]];
+    }
     
     _composeView.textView.delegate = self;
     _composeView.textView.text = self.text;
     
-    if ([self.service respondsToSelector:@selector(postText:withImages:location:)])
+    if (NO)//[self.service respondsToSelector:@selector(postText:withImages:location:)])
         [_composeView setLocationSupportEnabled:YES];
     
     if ([self isCharacterCountSupportEnabled])
@@ -218,13 +232,32 @@
 
 - (void)cancelButtonPressed:(id)sender event:(UIEvent *)event
 {
-    [self dismissModalShareComposeViewControllerAnimated:YES];
+    if (_completionHandler != NULL)
+        self.completionHandler(WTShareComposeViewControllerResultCancelled);
+    else
+        [self dismissModalShareComposeViewControllerAnimated:YES];
 }
 
 
 - (void)sendButtonPressed:(id)sender event:(UIEvent *)event
 {
-    [self dismissModalShareComposeViewControllerAnimated:YES];
+    // Disable the send button
+    [sender setEnabled:NO];
+    
+    if ([self isLocationSupportEnabled])
+    {
+        [self.service postText:_composeView.textView.text
+                    withImages:self.images
+                          URLs:self.urls
+                      location:nil];
+    }
+    
+    else
+    {
+        [self.service postText:_composeView.textView.text
+                    withImages:self.images
+                          URLs:self.urls];
+    }
 }
 
 
@@ -242,6 +275,15 @@
     }];
     
     [_composeView hideAnimated:animated];
+}
+
+
+- (BOOL)isLocationSupportEnabled
+{
+    if ([self.service respondsToSelector:@selector(postText:withImages:URLs:location:)])
+        return YES;
+    
+    return NO;
 }
 
 
@@ -432,19 +474,38 @@
 
 - (void)postSucceeded:(id<WTShareService>)service
 {
-    
+    if (_completionHandler != NULL)
+        self.completionHandler(WTShareComposeViewControllerResultDone);
+    else
+        [self dismissModalShareComposeViewControllerAnimated:YES];
 }
 
 
 - (void)postFailed:(id<WTShareService>)service
-{
+{   
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Message", @"")
+                                                        message:[NSString stringWithFormat:NSLocalizedString(@"The message, \"%@\" cannot be sent because the connection to %@ failed.", @""), _composeView.textView.text, self.service.title]
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
+                                              otherButtonTitles:NSLocalizedString(@"Try Again", @""), nil];
+    alertView.tag = WTShareComposeViewControllerCannotSendAlert;
+    [alertView show];
     
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 
 - (void)postFailedAuthentication:(id<WTShareService>)service
-{
+{   
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Message", @"")
+                                                        message:[NSString stringWithFormat:NSLocalizedString(@"Unable to login to %@ with existing credentials. Try again with new credentials.", @""), self.service.title]
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                              otherButtonTitles:nil];
     
+    [alertView show];
+    
+    [self dismissModalShareComposeViewControllerAnimated:YES];
 }
 
 
@@ -466,6 +527,27 @@
         if (alpha > 1.0) alpha = 1.0;
         
         [_composeView.navigationBarShadowView setAlpha:alpha];
+    }
+}
+
+
+#pragma mark - UIAlertView delegate methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+// This gets called if there's an error sending the tweet.
+{
+    if (alertView.tag == WTShareComposeViewControllerNoAccountsAlert)
+    {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    
+    else if (alertView.tag == WTShareComposeViewControllerCannotSendAlert)
+    {
+        if (buttonIndex == 1)
+        {
+            // The user wants to try again.
+            [self sendButtonPressed:self.navigationItem.rightBarButtonItem event:nil];
+        }
     }
 }
 

@@ -10,4 +10,6 @@
 
 @interface WTFoursquareService : NSObject <WTShareService>
 
+@property (nonatomic, weak) id <WTShareServiceDelegate> delegate;
+
 @end

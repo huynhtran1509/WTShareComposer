@@ -47,9 +47,9 @@
     return ([images count] * 20);
 }
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images
+- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls
 {
-    
+    [self.delegate postSucceeded:self];
 }
 
 @end

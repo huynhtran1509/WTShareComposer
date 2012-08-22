@@ -9,27 +9,29 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+@protocol WTShareServiceDelegate;
 @protocol WTShareService <NSObject>
 
 // Returns if service is accessible and at least one account has been setup.
 + (BOOL)canShare;
 
-- (NSString *)title;
+- (id<WTShareServiceDelegate>)delegate;
+- (void)setDelegate:(id<WTShareServiceDelegate>)delegate;
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images;
+- (NSString *)title;
+- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls;
 
 @optional
 
 - (NSUInteger)imageAttachmentsLimit;
 - (NSUInteger)URLAttachmentsLimit;
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images location:(CLLocation *)location;
+- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls location:(CLLocation *)location;
 
 @end
 
 @protocol WTShareServiceDelegate <NSObject>
 
-@optional
 - (void)postSucceeded:(id<WTShareService>)service;
 - (void)postFailed:(id<WTShareService>)service;
 - (void)postFailedAuthentication:(id<WTShareService>)service;

@@ -8,12 +8,16 @@
 
 #import "WTShareComposeView.h"
 #import "WTTextView.h"
+#import "WTThumbnailView.h"
 #import "WTShareTheme.h"
 #import <QuartzCore/QuartzCore.h>
+
+#define degreesToRadians(x) (M_PI * x / 180.0f)
 
 @interface WTShareComposeView ()
 
 @property UIImageView *backgroundImageView;
+@property NSArray *attachmentViews;
 
 @end
 
@@ -57,6 +61,8 @@
     if (self)
     {
         // Initialization code
+        self.attachmentViews = @[];
+        
         [self.layer setShadowPath:[UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:10.0].CGPath];
         [self.layer setShadowRadius:5.0];
         [self.layer setShadowOffset:CGSizeZero];
@@ -192,13 +198,31 @@
 
 - (void)addAttachment:(UIImage *)image
 {
-    if (![self.attachmentClipView superview])
+    if (self.attachmentViews.count < 3)
     {
-        [self addSubview:self.attachmentClipView];
-        [self adjustTextViewFrame];
+        if (![self.attachmentClipView superview])
+        {
+            [self addSubview:self.attachmentClipView];
+            [self adjustTextViewFrame];
+        }
+        
+        // Add thumbnail views
+        CGRect thumb_frame = CGRectZero;
+        thumb_frame.origin = self.attachmentClipView.frame.origin;
+        thumb_frame.origin.x -= 15.0;
+        thumb_frame.origin.y += 15.0;
+        
+        WTThumbnailView *thumbnailView = [[WTThumbnailView alloc] initWithFrame:thumb_frame];
+        [thumbnailView setImage:image];
+        [self insertSubview:thumbnailView aboveSubview:self.backgroundImageView];
+        
+        if (self.attachmentViews.count == 1)
+            thumbnailView.transform = CGAffineTransformMakeRotation(degreesToRadians(-6.0f));
+        else if (self.attachmentViews.count == 2)
+            thumbnailView.transform = CGAffineTransformMakeRotation(degreesToRadians(9.0f));
+        
+        self.attachmentViews = [self.attachmentViews arrayByAddingObject:thumbnailView];
     }
-    
-    // TODO: Add thumbnail views
 }
 
 
@@ -213,7 +237,9 @@
 {
     [self.attachmentClipView removeFromSuperview];
     [self adjustTextViewFrame];
-    // TODO remove all thumbnail views
+    
+    [self.attachmentViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    self.attachmentViews = @[];
 }
 
 
@@ -261,7 +287,7 @@
     {
         text_frame = CGRectMake(0.0,
                                 CGRectGetMaxY(_navigationBar.frame),
-                                CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
+                                CGRectGetWidth(self.frame),
                                 CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame));
         
     }
@@ -270,10 +296,13 @@
     {
         text_frame = CGRectMake(0.0,
                                 CGRectGetMaxY(_navigationBar.frame),
-                                CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
+                                CGRectGetWidth(self.frame),
                                 CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) - 30.0f);
         
     }
+    
+    if (self.attachmentClipView.superview)
+        text_frame.size.width -=  CGRectGetWidth(self.attachmentClipView.frame);
     
     [_textView setFrame:text_frame];
 }

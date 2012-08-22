@@ -21,15 +21,15 @@
 }
 
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images
+- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls
 {
     
 }
 
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images location:(CLLocation *)location
+- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls location:(CLLocation *)location
 {
-    
+    [self.delegate postFailedAuthentication:self];
 }
 
 @end

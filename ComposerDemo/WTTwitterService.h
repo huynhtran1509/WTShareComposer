@@ -10,4 +10,6 @@
 
 @interface WTTwitterService : NSObject <WTShareServiceCharacterLimit>
 
+@property (nonatomic, weak) id <WTShareServiceDelegate> delegate;
+
 @end
