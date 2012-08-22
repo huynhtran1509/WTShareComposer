@@ -136,4 +136,15 @@
     return WTShareThemeDisplayNavigationBarDropShadowAuto;
 }
 
+
+- (void)themeAttachmentClipView:(UIImageView *)attachmentClipView
+{
+    [attachmentClipView setImage:[UIImage imageNamed:@"DETweetPaperClip.png"]];
+    
+    CGRect attachment_frame = CGRectZero;
+    attachment_frame.size = attachmentClipView.image.size;
+    attachment_frame.origin = CGPointMake(231.0f, 45.0f);
+    [attachmentClipView setFrame:attachment_frame];
+}
+
 @end

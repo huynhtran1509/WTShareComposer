@@ -80,6 +80,7 @@
             WTTwitterTheme *theme = [[WTTwitterTheme alloc] init];
             WTTwitterService *service = [[WTTwitterService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
+            [controller setInitialText:@"Hello world!"];
             break;
         }
         case WTComposerDemoFacebook:

@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) UILabel *locationLabel;
 @property (nonatomic, readonly) UILabel *characterCountLabel;
 @property (nonatomic, readonly) UIImageView *navigationBarShadowView;
+@property (nonatomic, readonly) UIImageView *attachmentClipView;
 
 @property (nonatomic, weak) id <WTShareTheme> theme;
 @property (nonatomic, getter = isLocationSupportEnabled) BOOL locationSupportEnabled;

@@ -38,4 +38,6 @@ typedef enum WTShareThemeDisplayNavigationBarDropShadow : NSUInteger
 - (void)themeNavigationBarShadowView:(UIImageView *)shadowView;
 - (WTShareThemeDisplayNavigationBarDropShadow)shouldDisplayNavigationBarDropShadow;
 
+- (void)themeAttachmentClipView:(UIImageView *)attachmentClipView;
+
 @end

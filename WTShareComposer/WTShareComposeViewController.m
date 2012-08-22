@@ -95,9 +95,10 @@
     self.view.backgroundColor = [UIColor clearColor];
     
     _composeView = [[WTShareComposeView alloc] initWithNavigationItem:self.navigationItem theme:self.theme];
-    [_composeView setBackgroundColor:[UIColor colorWithPatternImage:[self.theme shareCardBackgroundImage]]];
-    [self.theme themeNavigationBar:_composeView.navigationBar];
     [self.view addSubview:_composeView];
+    
+    _composeView.textView.delegate = self;
+    _composeView.textView.text = self.text;
     
     if ([self.service respondsToSelector:@selector(postText:withImages:location:)])
         [_composeView setLocationSupportEnabled:YES];
@@ -107,8 +108,6 @@
         [_composeView setCharacterCountSupportEnabled:YES];
         [self updateCharacterCount];
     }
-    
-    _composeView.textView.delegate = self;
 }
 
 
@@ -339,7 +338,7 @@
         return NO;
     }
     
-    _composeView.textView.text = text;  // Keep a copy in case the view isn't loaded yet.
+    _text = text;  // Keep a copy in case the view isn't loaded yet.
     
     return YES;
 }
@@ -381,7 +380,12 @@
 // if the sheet has already been presented to the user.
 - (BOOL)removeAllImages
 {
-    return NO;
+    if ([self isViewLoaded]) {
+        return NO;
+    }
+    
+    _images = @[];
+    return YES;
 }
 
 // Adds a URL to the tweet. Returns NO if the additional URL will not fit
@@ -389,14 +393,40 @@
 // been presented to the user.
 - (BOOL)addURL:(NSURL *)url
 {
-    return NO;
+    if (url == nil) {
+        return NO;
+    }
+    
+    if ([self isViewLoaded]) {
+        return NO;
+    }
+    
+    if ([self attachmentsCount] >= 3) {
+        return NO;  // Only three allowed.
+    }
+    
+    if ([self isCharacterCountSupportEnabled])
+    {
+        NSInteger imageLength = [(id)self.service characterCountForURLs:@[ url ]];
+        if (([self charactersAvailable] - (imageLength + 1)) < 0) {  // Add one for the space character.
+            return NO;
+        }
+    }
+    
+    _urls = [self.urls arrayByAddingObject:url];
+    return YES;
 }
 
 // Removes all URLs from the tweet. Returns NO and does not perform an operation
 // if the sheet has already been presented to the user.
 - (BOOL)removeAllURLs
 {
-    return NO;
+    if ([self isViewLoaded]) {
+        return NO;
+    }
+    
+    _urls = @[];
+    return YES;
 }
 
 - (void)postSucceeded:(id<WTShareService>)service
