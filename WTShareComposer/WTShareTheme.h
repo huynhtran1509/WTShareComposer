@@ -30,6 +30,8 @@ typedef enum WTShareThemeDisplayNavigationBarDropShadow : NSUInteger
 @protocol WTShareTheme <NSObject>
 
 - (UIImage *)shareCardBackgroundImage;
+- (UIImage *)attachmentPlaceholderImage;
+- (UIImage *)URLAttachmentImage;
 
 - (void)themeBarButtonItem:(UIBarButtonItem *)buttonItem ofType:(WTShareThemeBarButtonItemType)type;
 - (void)themeLabel:(UILabel *)label ofType:(WTShareThemeLabelType)type;

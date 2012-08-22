@@ -32,4 +32,8 @@
 - (void)hideAnimated:(BOOL)animated;
 - (void)hideAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
 
+- (void)addAttachment:(UIImage *)image;
+- (void)addAttachments:(NSArray *)attachments;
+- (void)removeAllAttachments;
+
 @end

@@ -96,6 +96,7 @@
     
     _composeView = [[WTShareComposeView alloc] initWithNavigationItem:self.navigationItem theme:self.theme];
     [self.view addSubview:_composeView];
+    [_composeView addAttachment:nil];
     
     _composeView.textView.delegate = self;
     _composeView.textView.text = self.text;

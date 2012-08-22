@@ -31,6 +31,7 @@
         [self insertSubview:self.ruledView atIndex:0];
         
         [self setAlwaysBounceVertical:YES];
+        [self setClipsToBounds:NO];
     }
     
     return self;

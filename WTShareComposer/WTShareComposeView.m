@@ -35,6 +35,7 @@
         [self addTextView];
         [self addLocationLabel];
         [self addCharacterCountLabel];
+        [self addAttachmentClipView];
         
         if ([self.theme shouldDisplayNavigationBarDropShadow] != WTShareThemeDisplayNavigationBarDropShadowAlways)
             [self.navigationBarShadowView setAlpha:0.0];
@@ -87,6 +88,8 @@
 {
     _navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.frame), 44.0)];
     [self.navigationBar.layer setMasksToBounds:YES];
+    [self.navigationBar setOpaque:YES];
+    [self.navigationBar setBackgroundColor:[UIColor whiteColor]];
     [self.navigationBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [self.backgroundImageView addSubview:self.navigationBar];
     [self.theme themeNavigationBar:self.navigationBar];
@@ -103,7 +106,10 @@
 
 - (void)addTextView
 {
-    _textView = [[WTTextView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(_navigationBar.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame))];
+    _textView = [[WTTextView alloc] initWithFrame:CGRectMake(0.0,
+                                                             CGRectGetMaxY(_navigationBar.frame),
+                                                             CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
+                                                             CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame))];
     [self.textView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
     [self.textView setScrollIndicatorInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
     [self.textView setKeyboardType:UIKeyboardTypeTwitter];
@@ -111,7 +117,7 @@
     [self.textView setShowsHorizontalScrollIndicator:NO];
     [self.textView setAlwaysBounceHorizontal:NO];
     [self.textView setFont:[UIFont systemFontOfSize:17.0]];
-    [self insertSubview:self.textView belowSubview:self.navigationBarShadowView];
+    [self.backgroundImageView insertSubview:self.textView belowSubview:self.navigationBarShadowView];
 }
 
 
@@ -143,7 +149,6 @@
 - (void)addAttachmentClipView
 {   
     _attachmentClipView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [self addSubview:self.attachmentClipView];
     [self.theme themeAttachmentClipView:self.attachmentClipView];
 }
 
@@ -182,6 +187,33 @@
     } completion:completion];
     
     [self.textView resignFirstResponder];
+}
+
+
+- (void)addAttachment:(UIImage *)image
+{
+    if (![self.attachmentClipView superview])
+    {
+        [self addSubview:self.attachmentClipView];
+        [self adjustTextViewFrame];
+    }
+    
+    // TODO: Add thumbnail views
+}
+
+
+- (void)addAttachments:(NSArray *)attachments
+{
+    for (UIImage *image in attachments)
+        [self addAttachment:image];
+}
+
+
+- (void)removeAllAttachments
+{
+    [self.attachmentClipView removeFromSuperview];
+    [self adjustTextViewFrame];
+    // TODO remove all thumbnail views
 }
 
 
@@ -229,7 +261,7 @@
     {
         text_frame = CGRectMake(0.0,
                                 CGRectGetMaxY(_navigationBar.frame),
-                                CGRectGetWidth(self.frame),
+                                CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
                                 CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame));
         
     }
@@ -238,7 +270,7 @@
     {
         text_frame = CGRectMake(0.0,
                                 CGRectGetMaxY(_navigationBar.frame),
-                                CGRectGetWidth(self.frame),
+                                CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
                                 CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) - 30.0f);
         
     }

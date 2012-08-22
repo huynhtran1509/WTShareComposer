@@ -17,6 +17,19 @@
     return [UIImage imageNamed:@"DETweetCardBackground.png"];
 }
 
+
+- (UIImage *)attachmentPlaceholderImage
+{
+    return nil;
+}
+
+
+- (UIImage *)URLAttachmentImage
+{
+    return [UIImage imageNamed:@"DETweetURLAttachment.png"];
+}
+
+
 - (UIImage *)portraitImageForButtonOfType:(WTShareThemeBarButtonItemType)type
 {
     switch (type)
