@@ -47,6 +47,8 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
     if (self)
     {
         // Custom initialization
+        _images = @[];
+        _urls = @[];
     }
     
     return self;
@@ -377,9 +379,11 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
         return NO;
     }
     
-    if (([self charactersAvailable] - (NSInteger)[text length]) < 0) {
-        return NO;
-    }
+    if ([self isCharacterCountSupportEnabled])
+        if (([self charactersAvailable] - (NSInteger)[text length]) < 0)
+        {
+            return NO;
+        }
     
     _text = text;  // Keep a copy in case the view isn't loaded yet.
     

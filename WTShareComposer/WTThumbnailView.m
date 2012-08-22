@@ -20,6 +20,7 @@
     {
         // Initialization code
         self.backgroundColor = [UIColor whiteColor];
+        self.contentMode = UIViewContentModeScaleAspectFill;
         
         CGRect thumb_frame = frame;
         thumb_frame.origin = CGPointZero;

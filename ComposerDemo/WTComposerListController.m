@@ -88,6 +88,7 @@
             WTFacebookTheme *theme = [[WTFacebookTheme alloc] init];
             WTFacebookService *service = [[WTFacebookService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
+            [controller addURL:[NSURL URLWithString:@"http://www.google.com"]];
             break;
         }
         case WTComposerDemoFoursquare:
@@ -95,6 +96,9 @@
             WTFourSquareTheme *theme = [[WTFourSquareTheme alloc] init];
             WTFoursquareService *service = [[WTFoursquareService alloc] init];
             controller = [[WTShareComposeViewController alloc] initWithService:service theme:theme];
+            [controller addURL:[NSURL URLWithString:@"http://www.google.com"]];
+            [controller addURL:[NSURL URLWithString:@"http://www.google.com"]];
+            [controller setInitialText:@"Hello foursquare peeps!"];
             break;
         }
         default:
