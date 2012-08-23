@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
   s.source_files = 'WTShareComposer/*.{h,m}'
   s.resource     = 'DETweetComposeViewController/Resources/*.png'
   s.requires_arc = true
+  s.ios.deployment_target = '5.0'
 end
