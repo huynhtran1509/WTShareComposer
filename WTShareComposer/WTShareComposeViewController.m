@@ -74,18 +74,18 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
         self.title = [self.service title];
         
         UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title")
-                                                                                 style:UIBarButtonItemStyleBordered
-                                                                                target:self
-                                                                                action:@selector(cancelButtonPressed:event:)];
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self
+                                                                      action:@selector(cancelButtonPressed:event:)];
         [self.theme themeBarButtonItem:cancelItem
                                 ofType:WTShareThemeBarButtonItemTypeCancel];
         
         self.navigationItem.leftBarButtonItem = cancelItem;
         
         UIBarButtonItem *sendItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Send", @"Send button title")
-                                                                                  style:UIBarButtonItemStyleDone
-                                                                                 target:self
-                                                                                 action:@selector(sendButtonPressed:event:)];
+                                                                     style:UIBarButtonItemStyleDone
+                                                                    target:self
+                                                                    action:@selector(sendButtonPressed:event:)];
         
         [self.theme themeBarButtonItem:sendItem
                                 ofType:WTShareThemeBarButtonItemTypeSend];
@@ -240,7 +240,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
     if (_completionHandler != NULL)
         self.completionHandler(WTShareComposeViewControllerResultCancelled);
     else
-        [self dismissModalShareComposeViewControllerAnimated:YES];
+        [self dismissModalShareComposeViewControllerAnimated:YES completion:NULL];
 }
 
 
@@ -254,7 +254,19 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 }
 
 
-- (void)dismissModalShareComposeViewControllerAnimated:(BOOL)animated
+- (void)dismissModalViewControllerAnimated:(BOOL)animated
+{
+    [self dismissModalShareComposeViewControllerAnimated:animated completion:NULL];
+}
+
+
+- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
+{
+    [self dismissModalShareComposeViewControllerAnimated:flag completion:completion];
+}
+
+
+- (void)dismissModalShareComposeViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
     [[UIApplication sharedApplication] setStatusBarStyle:_initialStatusBarStyle
                                                 animated:animated];
@@ -264,7 +276,12 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
     [UIView animateWithDuration:duration animations:^{
         _backgroundImageView.alpha = 1.0f;
     } completion:^(BOOL finished) {
-        [self dismissModalViewControllerAnimated:NO];
+        
+        [super dismissModalViewControllerAnimated:NO];
+        
+        if (completion != NULL)
+            completion();
+        
     }];
     
     [_composeView hideAnimated:animated];
@@ -387,7 +404,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 - (BOOL)addImage:(UIImage *)image
 {
     if (image == nil) {
-    return NO;
+        return NO;
     }
     
     if ([self isViewLoaded]) {
@@ -472,12 +489,12 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
     if (_completionHandler != NULL)
         self.completionHandler(WTShareComposeViewControllerResultDone);
     else
-        [self dismissModalShareComposeViewControllerAnimated:YES];
+        [self dismissModalShareComposeViewControllerAnimated:YES completion:NULL];
 }
 
 
 - (void)postFailed:(id<WTShareService>)service
-{   
+{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Message", @"")
                                                         message:[NSString stringWithFormat:NSLocalizedString(@"The message, \"%@\" cannot be sent because the connection to %@ failed.", @""), _composeView.textView.text, self.service.title]
                                                        delegate:self
@@ -491,7 +508,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 
 
 - (void)postFailedAuthentication:(id<WTShareService>)service
-{   
+{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Message", @"")
                                                         message:[NSString stringWithFormat:NSLocalizedString(@"Unable to login to %@ with existing credentials. Try again with new credentials.", @""), self.service.title]
                                                        delegate:nil
@@ -500,7 +517,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
     
     [alertView show];
     
-    [self dismissModalShareComposeViewControllerAnimated:YES];
+    [self dismissModalShareComposeViewControllerAnimated:YES completion:NULL];
 }
 
 
