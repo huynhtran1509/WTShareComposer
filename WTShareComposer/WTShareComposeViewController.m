@@ -117,8 +117,11 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
     _composeView.textView.delegate = self;
     _composeView.textView.text = self.text;
     
-    if (NO)//[self.service respondsToSelector:@selector(postText:withImages:location:)])
+    if ([self isLocationSupportEnabled])
+    {
         [_composeView setLocationSupportEnabled:YES];
+        _composeView.locationLabel.text = [self.service locationName];
+    }
     
     if ([self isCharacterCountSupportEnabled])
     {
@@ -245,21 +248,9 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 {
     // Disable the send button
     [sender setEnabled:NO];
-    
-    if ([self isLocationSupportEnabled])
-    {
-        [self.service postText:_composeView.textView.text
-                    withImages:self.images
-                          URLs:self.urls
-                      location:nil];
-    }
-    
-    else
-    {
-        [self.service postText:_composeView.textView.text
-                    withImages:self.images
-                          URLs:self.urls];
-    }
+    [self.service postText:_composeView.textView.text
+                withImages:self.images
+                      URLs:self.urls];
 }
 
 
@@ -282,7 +273,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 
 - (BOOL)isLocationSupportEnabled
 {
-    if ([self.service respondsToSelector:@selector(postText:withImages:URLs:location:)])
+    if ([self.service respondsToSelector:@selector(locationName)])
         return YES;
     
     return NO;

@@ -67,6 +67,5 @@ typedef void (^WTShareComposeViewControllerCompletionHandler)(WTShareComposeView
 @property (nonatomic, readonly) NSArray *images;
 @property (nonatomic, readonly) NSArray *urls;
 @property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) CLLocation *location;
 
 @end

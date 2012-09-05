@@ -80,6 +80,18 @@
 		B6DEB61914631499009FD33C /* DETweetCardHeaderLine.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61714631499009FD33C /* DETweetCardHeaderLine.png */; };
 		B6DEB61A14631499009FD33C /* DETweetCardHeaderLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DEB61814631499009FD33C /* DETweetCardHeaderLine@2x.png */; };
 		B6FD55AD1463A6E100739469 /* DETweetTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FD55AC1463A6E100739469 /* DETweetTextView.m */; };
+		BD1BB3A415F798EC00A90156 /* WTFacebookTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD1BB39E15F798EC00A90156 /* WTFacebookTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD1BB3A515F798EC00A90156 /* WTFacebookTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1BB39F15F798EC00A90156 /* WTFacebookTheme.m */; };
+		BD1BB3A615F798EC00A90156 /* WTFourSquareTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD1BB3A015F798EC00A90156 /* WTFourSquareTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD1BB3A715F798EC00A90156 /* WTFourSquareTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1BB3A115F798EC00A90156 /* WTFourSquareTheme.m */; };
+		BD1BB3A815F798EC00A90156 /* WTTwitterTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD1BB3A215F798EC00A90156 /* WTTwitterTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD1BB3A915F798EC00A90156 /* WTTwitterTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1BB3A315F798EC00A90156 /* WTTwitterTheme.m */; };
+		BD1BB3AD15F7992600A90156 /* nav_bg_foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1BB3AB15F7992600A90156 /* nav_bg_foursquare.png */; };
+		BD1BB3AE15F7992600A90156 /* nav_bg_foursquare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1BB3AC15F7992600A90156 /* nav_bg_foursquare@2x.png */; };
+		BD1BB3B115F7AD4300A90156 /* ic_tweetsheet_location.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1BB3AF15F7AD4300A90156 /* ic_tweetsheet_location.png */; };
+		BD1BB3B215F7AD4300A90156 /* ic_tweetsheet_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1BB3B015F7AD4300A90156 /* ic_tweetsheet_location@2x.png */; };
+		BD1BB3B315F7ADEB00A90156 /* ic_tweetsheet_location.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1BB3AF15F7AD4300A90156 /* ic_tweetsheet_location.png */; };
+		BD1BB3B415F7ADEB00A90156 /* ic_tweetsheet_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1BB3B015F7AD4300A90156 /* ic_tweetsheet_location@2x.png */; };
 		BD1C8D3D15CED53700686EB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13117145768DB00500180 /* UIKit.framework */; };
 		BD1C8D3E15CED53700686EB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A13119145768DB00500180 /* Foundation.framework */; };
 		BD1C8D3F15CED53700686EB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A1311B145768DB00500180 /* CoreGraphics.framework */; };
@@ -104,11 +116,8 @@
 		BD302B2E15CB278B00E5558A /* WTShareTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2D15CB278B00E5558A /* WTShareTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD302B3115CB2AB200E5558A /* WTDefaultTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD302B3215CB2AB200E5558A /* WTDefaultTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */; };
-		BD3C05C615D55C0100A5EA4B /* WTFourSquareTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3C05C515D55C0100A5EA4B /* WTFourSquareTheme.m */; };
 		BD3C05CA15D55FFF00A5EA4B /* nav_bg_foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = BD3C05C815D55FFF00A5EA4B /* nav_bg_foursquare.png */; };
 		BD3C05CB15D55FFF00A5EA4B /* nav_bg_foursquare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD3C05C915D55FFF00A5EA4B /* nav_bg_foursquare@2x.png */; };
-		BD3C05CE15D589E100A5EA4B /* WTFacebookTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3C05CD15D589E100A5EA4B /* WTFacebookTheme.m */; };
-		BD56CCF215E3CB27006ECA3E /* WTTwitterTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */; };
 		BD9E685D15E5512800043FEE /* WTThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = BD9E685B15E5512800043FEE /* WTThumbnailView.h */; };
 		BD9E685E15E5512800043FEE /* WTThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9E685C15E5512800043FEE /* WTThumbnailView.m */; };
 		BDF8D74415D4463200D6FC48 /* WTTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF8D74215D4463200D6FC48 /* WTTextView.h */; };
@@ -275,6 +284,16 @@
 		B6DEB61814631499009FD33C /* DETweetCardHeaderLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DETweetCardHeaderLine@2x.png"; path = "DETweetComposeViewController/Resources/DETweetCardHeaderLine@2x.png"; sourceTree = SOURCE_ROOT; };
 		B6FD55AB1463A6E100739469 /* DETweetTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DETweetTextView.h; path = DETweetComposeViewController/DETweetTextView.h; sourceTree = SOURCE_ROOT; };
 		B6FD55AC1463A6E100739469 /* DETweetTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DETweetTextView.m; path = DETweetComposeViewController/DETweetTextView.m; sourceTree = SOURCE_ROOT; };
+		BD1BB39E15F798EC00A90156 /* WTFacebookTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFacebookTheme.h; sourceTree = "<group>"; };
+		BD1BB39F15F798EC00A90156 /* WTFacebookTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFacebookTheme.m; sourceTree = "<group>"; };
+		BD1BB3A015F798EC00A90156 /* WTFourSquareTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFourSquareTheme.h; sourceTree = "<group>"; };
+		BD1BB3A115F798EC00A90156 /* WTFourSquareTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFourSquareTheme.m; sourceTree = "<group>"; };
+		BD1BB3A215F798EC00A90156 /* WTTwitterTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTwitterTheme.h; sourceTree = "<group>"; };
+		BD1BB3A315F798EC00A90156 /* WTTwitterTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTwitterTheme.m; sourceTree = "<group>"; };
+		BD1BB3AB15F7992600A90156 /* nav_bg_foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg_foursquare.png; sourceTree = "<group>"; };
+		BD1BB3AC15F7992600A90156 /* nav_bg_foursquare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg_foursquare@2x.png"; sourceTree = "<group>"; };
+		BD1BB3AF15F7AD4300A90156 /* ic_tweetsheet_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tweetsheet_location.png; sourceTree = "<group>"; };
+		BD1BB3B015F7AD4300A90156 /* ic_tweetsheet_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tweetsheet_location@2x.png"; sourceTree = "<group>"; };
 		BD1C8D3B15CED53700686EB3 /* ComposerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1C8D4215CED53700686EB3 /* ComposerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ComposerDemo-Info.plist"; sourceTree = "<group>"; };
 		BD1C8D4415CED53700686EB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -301,14 +320,8 @@
 		BD302B2D15CB278B00E5558A /* WTShareTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTShareTheme.h; sourceTree = "<group>"; };
 		BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDefaultTheme.h; sourceTree = "<group>"; };
 		BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDefaultTheme.m; sourceTree = "<group>"; };
-		BD3C05C415D55C0100A5EA4B /* WTFourSquareTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFourSquareTheme.h; sourceTree = "<group>"; };
-		BD3C05C515D55C0100A5EA4B /* WTFourSquareTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFourSquareTheme.m; sourceTree = "<group>"; };
 		BD3C05C815D55FFF00A5EA4B /* nav_bg_foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg_foursquare.png; sourceTree = "<group>"; };
 		BD3C05C915D55FFF00A5EA4B /* nav_bg_foursquare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg_foursquare@2x.png"; sourceTree = "<group>"; };
-		BD3C05CC15D589E000A5EA4B /* WTFacebookTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFacebookTheme.h; sourceTree = "<group>"; };
-		BD3C05CD15D589E100A5EA4B /* WTFacebookTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFacebookTheme.m; sourceTree = "<group>"; };
-		BD56CCF015E3CB27006ECA3E /* WTTwitterTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTwitterTheme.h; sourceTree = "<group>"; };
-		BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTwitterTheme.m; sourceTree = "<group>"; };
 		BD9E685B15E5512800043FEE /* WTThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTThumbnailView.h; sourceTree = "<group>"; };
 		BD9E685C15E5512800043FEE /* WTThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTThumbnailView.m; sourceTree = "<group>"; };
 		BD9E686015E579DF00043FEE /* WTShareComposer.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WTShareComposer.podspec; sourceTree = "<group>"; };
@@ -607,6 +620,10 @@
 				B655DDFF1458C5F000F513E1 /* DETweetAttachmentFrame@2x.png */,
 				B655DE001458C5F000F513E1 /* DETweetURLAttachment.png */,
 				B655DE011458C5F000F513E1 /* DETweetURLAttachment@2x.png */,
+				BD1BB3AB15F7992600A90156 /* nav_bg_foursquare.png */,
+				BD1BB3AC15F7992600A90156 /* nav_bg_foursquare@2x.png */,
+				BD1BB3AF15F7AD4300A90156 /* ic_tweetsheet_location.png */,
+				BD1BB3B015F7AD4300A90156 /* ic_tweetsheet_location@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -622,14 +639,8 @@
 				BDFE95FA15CEE2A200D52C28 /* WTFacebookService.m */,
 				BDFE95FD15CF083500D52C28 /* WTTwitterService.h */,
 				BDFE95FE15CF083500D52C28 /* WTTwitterService.m */,
-				BD56CCF015E3CB27006ECA3E /* WTTwitterTheme.h */,
-				BD56CCF115E3CB27006ECA3E /* WTTwitterTheme.m */,
 				BDFE960015CF088500D52C28 /* WTFoursquareService.h */,
 				BDFE960115CF088600D52C28 /* WTFoursquareService.m */,
-				BD3C05C415D55C0100A5EA4B /* WTFourSquareTheme.h */,
-				BD3C05C515D55C0100A5EA4B /* WTFourSquareTheme.m */,
-				BD3C05CC15D589E000A5EA4B /* WTFacebookTheme.h */,
-				BD3C05CD15D589E100A5EA4B /* WTFacebookTheme.m */,
 				BD1C8D4115CED53700686EB3 /* Supporting Files */,
 			);
 			path = ComposerDemo;
@@ -694,6 +705,12 @@
 				BD302B2D15CB278B00E5558A /* WTShareTheme.h */,
 				BD302B2F15CB2AB200E5558A /* WTDefaultTheme.h */,
 				BD302B3015CB2AB200E5558A /* WTDefaultTheme.m */,
+				BD1BB39E15F798EC00A90156 /* WTFacebookTheme.h */,
+				BD1BB39F15F798EC00A90156 /* WTFacebookTheme.m */,
+				BD1BB3A015F798EC00A90156 /* WTFourSquareTheme.h */,
+				BD1BB3A115F798EC00A90156 /* WTFourSquareTheme.m */,
+				BD1BB3A215F798EC00A90156 /* WTTwitterTheme.h */,
+				BD1BB3A315F798EC00A90156 /* WTTwitterTheme.m */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -746,6 +763,9 @@
 				BDF8D74415D4463200D6FC48 /* WTTextView.h in Headers */,
 				BDF8D74915D447FB00D6FC48 /* WTRuledView.h in Headers */,
 				BD9E685D15E5512800043FEE /* WTThumbnailView.h in Headers */,
+				BD1BB3A415F798EC00A90156 /* WTFacebookTheme.h in Headers */,
+				BD1BB3A615F798EC00A90156 /* WTFourSquareTheme.h in Headers */,
+				BD1BB3A815F798EC00A90156 /* WTTwitterTheme.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +914,10 @@
 				B6634191148D9C8C0026DB14 /* YawkeyCleanTeeth.jpg in Resources */,
 				B61501FA149BFF7000C4A719 /* DETweetCardAccountLine.png in Resources */,
 				B61501FB149BFF7000C4A719 /* DETweetCardAccountLine@2x.png in Resources */,
+				BD1BB3AD15F7992600A90156 /* nav_bg_foursquare.png in Resources */,
+				BD1BB3AE15F7992600A90156 /* nav_bg_foursquare@2x.png in Resources */,
+				BD1BB3B115F7AD4300A90156 /* ic_tweetsheet_location.png in Resources */,
+				BD1BB3B215F7AD4300A90156 /* ic_tweetsheet_location@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +948,8 @@
 				BDFE961615CF164F00D52C28 /* DETweetURLAttachment@2x.png in Resources */,
 				BD3C05CA15D55FFF00A5EA4B /* nav_bg_foursquare.png in Resources */,
 				BD3C05CB15D55FFF00A5EA4B /* nav_bg_foursquare@2x.png in Resources */,
+				BD1BB3B315F7ADEB00A90156 /* ic_tweetsheet_location.png in Resources */,
+				BD1BB3B415F7ADEB00A90156 /* ic_tweetsheet_location@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,9 +1025,6 @@
 				BDFE95FB15CEE2A200D52C28 /* WTFacebookService.m in Sources */,
 				BDFE95FF15CF083500D52C28 /* WTTwitterService.m in Sources */,
 				BDFE960215CF088600D52C28 /* WTFoursquareService.m in Sources */,
-				BD3C05C615D55C0100A5EA4B /* WTFourSquareTheme.m in Sources */,
-				BD3C05CE15D589E100A5EA4B /* WTFacebookTheme.m in Sources */,
-				BD56CCF215E3CB27006ECA3E /* WTTwitterTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,6 +1038,9 @@
 				BDF8D74515D4463200D6FC48 /* WTTextView.m in Sources */,
 				BDF8D74A15D447FB00D6FC48 /* WTRuledView.m in Sources */,
 				BD9E685E15E5512800043FEE /* WTThumbnailView.m in Sources */,
+				BD1BB3A515F798EC00A90156 /* WTFacebookTheme.m in Sources */,
+				BD1BB3A715F798EC00A90156 /* WTFourSquareTheme.m in Sources */,
+				BD1BB3A915F798EC00A90156 /* WTTwitterTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

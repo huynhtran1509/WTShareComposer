@@ -18,6 +18,7 @@
 
 @property UIImageView *backgroundImageView;
 @property NSArray *attachmentViews;
+@property UIView *textMaskingView;
 
 @end
 
@@ -83,6 +84,7 @@
     
     _backgroundImageView = [[UIImageView alloc] initWithFrame:background_frame];
     [self.backgroundImageView setImage:[self.theme shareCardBackgroundImage]];
+    [self.backgroundImageView setBackgroundColor:[UIColor colorWithRed:0.956862745 green:0.956862745 blue:0.956862745 alpha:1.0]];
     [self.backgroundImageView setUserInteractionEnabled:YES];
     [self.backgroundImageView.layer setCornerRadius:10.0];
     [self.backgroundImageView.layer setMasksToBounds:YES];
@@ -112,10 +114,15 @@
 
 - (void)addTextView
 {
-    _textView = [[WTTextView alloc] initWithFrame:CGRectMake(0.0,
-                                                             CGRectGetMaxY(_navigationBar.frame),
-                                                             CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
-                                                             CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame))];
+    CGRect text_frame = CGRectMake(0.0,
+                                   CGRectGetMaxY(_navigationBar.frame) - 5.0,
+                                   CGRectGetWidth(self.frame) - CGRectGetWidth(self.attachmentClipView.frame),
+                                   CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) + 5.0);
+    
+    _textMaskingView = [[UIView alloc] initWithFrame:text_frame];
+    [_textMaskingView setClipsToBounds:YES];
+    
+    _textView = [[WTTextView alloc] initWithFrame:_textMaskingView.bounds];
     [self.textView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
     [self.textView setScrollIndicatorInsets:UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)];
     [self.textView setKeyboardType:UIKeyboardTypeTwitter];
@@ -123,21 +130,41 @@
     [self.textView setShowsHorizontalScrollIndicator:NO];
     [self.textView setAlwaysBounceHorizontal:NO];
     [self.textView setFont:[UIFont systemFontOfSize:17.0]];
-    [self.backgroundImageView insertSubview:self.textView belowSubview:self.navigationBarShadowView];
+    [_textMaskingView addSubview:self.textView];
+    [self.backgroundImageView insertSubview:_textMaskingView belowSubview:self.navigationBarShadowView];
 }
 
 
 - (void)addLocationLabel
 {
-    _locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 100.0, CGRectGetWidth(self.frame) * 0.5f, 30.0)];
-    [_locationLabel setBackgroundColor:[UIColor redColor]];
+    CGRect location_frame = CGRectZero;
+    location_frame.size = CGSizeMake(150.0, 34.0);
+    location_frame.origin.x = 34.0;
+    location_frame.origin.y = CGRectGetHeight(self.bounds) - CGRectGetHeight(location_frame);
+    
+    _locationLabel = [[UILabel alloc] initWithFrame:location_frame];
+    [_locationLabel setBackgroundColor:[UIColor clearColor]];
+    [_locationLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14.0]];
+    [_locationLabel setTextColor:[UIColor grayColor]];
+    [_locationLabel setShadowColor:[UIColor colorWithWhite:0.8 alpha:0.7]];
+    [_locationLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
+    [_locationLabel setClipsToBounds:NO];
+    
+    UIImageView *locationArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_tweetsheet_location.png"]];
+    
+    CGRect arrow_frame = locationArrow.frame;
+    arrow_frame.origin.x -= (CGRectGetWidth(arrow_frame) + 4);
+    arrow_frame.origin.y = 8.0;
+    
+    [locationArrow setFrame:arrow_frame];
+    [_locationLabel addSubview:locationArrow];
 }
 
 
 - (void)addCharacterCountLabel
 {
     CGRect charcter_frame = CGRectZero;
-    charcter_frame.size.height = 30.0f;
+    charcter_frame.size.height = 34.0f;
     charcter_frame.size.width = CGRectGetWidth(self.frame) * 0.4f;
     charcter_frame.origin.x = CGRectGetWidth(self.frame) - (CGRectGetWidth(charcter_frame) + 10.0);
     charcter_frame.origin.y = CGRectGetHeight(self.frame) - CGRectGetHeight(charcter_frame);
@@ -249,7 +276,7 @@
     
     if (_locationSupportEnabled)
     {
-        [self addSubview:self.locationLabel];
+        [self insertSubview:self.locationLabel aboveSubview:_textMaskingView];
     }
     
     else
@@ -282,24 +309,28 @@
 - (void)adjustTextViewFrame
 {
     CGRect text_frame = CGRectZero;
+    CGRect mask_frame = CGRectZero;
     
     if (![self isCharacterCountSupportEnabled] && ![self isLocationSupportEnabled])
     {
-        text_frame = CGRectMake(0.0,
-                                CGRectGetMaxY(_navigationBar.frame),
+        mask_frame = CGRectMake(0.0,
+                                CGRectGetMaxY(_navigationBar.frame) - 5.0,
                                 CGRectGetWidth(self.frame),
-                                CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame));
+                                CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) + 5.0);
         
     }
     
     else
     {
-        text_frame = CGRectMake(0.0,
-                                CGRectGetMaxY(_navigationBar.frame),
+        mask_frame = CGRectMake(0.0,
+                                CGRectGetMaxY(_navigationBar.frame) - 5.0,
                                 CGRectGetWidth(self.frame),
-                                CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) - 30.0f);
+                                CGRectGetHeight(self.frame) - CGRectGetHeight(_navigationBar.frame) - 30.0f + 5.0);
         
     }
+    
+    [_textMaskingView setFrame:mask_frame];
+    text_frame = _textMaskingView.bounds;
     
     if (self.attachmentClipView.superview)
         text_frame.size.width -=  CGRectGetWidth(self.attachmentClipView.frame);

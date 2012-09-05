@@ -8,14 +8,13 @@
 
 #import "WTComposerListController.h"
 #import <WTShareComposer/WTShareComposeViewController.h>
+#import <WTShareComposer/WTTwitterTheme.h>
+#import <WTShareComposer/WTFourSquareTheme.h>
+#import <WTShareComposer/WTFacebookTheme.h>
 
 #import "WTTwitterService.h"
 #import "WTFacebookService.h"
 #import "WTFoursquareService.h"
-
-#import "WTTwitterTheme.h"
-#import "WTFourSquareTheme.h"
-#import "WTFacebookTheme.h"
 
 @interface WTComposerListController ()
 

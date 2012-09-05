@@ -27,9 +27,9 @@
 }
 
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls location:(CLLocation *)location
+- (NSString *)locationName
 {
-    [self.delegate postFailedAuthentication:self];
+    return @"Add Location";
 }
 
 @end

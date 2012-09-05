@@ -10,6 +10,12 @@
 
 @implementation WTFourSquareTheme
 
+- (UIImage *)shareCardBackgroundImage
+{
+    return nil;
+}
+
+
 - (void)themeNavigationBar:(UINavigationBar *)navigationBar
 {
     UIImage *backgroundImage = [[UIImage imageNamed:@"nav_bg_foursquare.png"] stretchableImageWithLeftCapWidth:6 topCapHeight:0];

@@ -26,7 +26,7 @@
 - (NSUInteger)imageAttachmentsLimit;
 - (NSUInteger)URLAttachmentsLimit;
 
-- (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls location:(CLLocation *)location;
+- (NSString *)locationName;
 
 @end
 
