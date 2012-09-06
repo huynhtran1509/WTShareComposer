@@ -291,6 +291,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 - (BOOL)isLocationSupportEnabled
 {
     if ([self.service respondsToSelector:@selector(locationName)] &&
+        [self.service respondsToSelector:@selector(setLocation:name:)] &&
         [self.service locationName] != nil &&
         [[self.service locationName] length] > 0)
         return YES;

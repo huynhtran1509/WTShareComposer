@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 
 @protocol WTShareServiceDelegate;
 @protocol WTShareService <NSObject>
@@ -27,6 +26,7 @@
 - (NSUInteger)URLAttachmentsLimit;
 
 - (NSString *)locationName;
+- (void)setLocation:(id)location name:(NSString *)locationName;
 
 @end
 
