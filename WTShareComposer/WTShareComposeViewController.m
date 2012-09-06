@@ -237,6 +237,8 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 
 - (void)cancelButtonPressed:(id)sender event:(UIEvent *)event
 {
+    [[self service] cancelPost];
+    
     if (_completionHandler != NULL)
         self.completionHandler(WTShareComposeViewControllerResultCancelled);
     else

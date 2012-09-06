@@ -19,6 +19,7 @@
 
 - (NSString *)title;
 - (void)postText:(NSString *)text withImages:(NSArray *)images URLs:(NSArray *)urls;
+- (void)cancelPost;
 
 @optional
 
