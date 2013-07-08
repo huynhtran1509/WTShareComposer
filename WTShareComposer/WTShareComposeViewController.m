@@ -23,7 +23,9 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 
 - (void)presentModalShareComposeViewControllerAnimated:(WTShareComposeViewController *)viewController
 {
-    [self presentModalViewController:viewController animated:NO];
+    [self presentViewController:viewController
+                       animated:NO
+                     completion:NULL];
 }
 
 @end
@@ -279,7 +281,8 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
         _backgroundImageView.alpha = 1.0f;
     } completion:^(BOOL finished) {
         
-        [super dismissModalViewControllerAnimated:NO];
+        [super dismissViewControllerAnimated:NO
+                                  completion:NULL];
         
         if (completion != NULL)
             completion();
@@ -555,7 +558,7 @@ typedef enum WTShareComposeViewAlertTag : NSUInteger
 {
     if (alertView.tag == WTShareComposeViewControllerNoAccountsAlert)
     {
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:NULL];
     }
     
     else if (alertView.tag == WTShareComposeViewControllerCannotSendAlert)
